@@ -1,13 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/26 05:15:33 by vde-frei         ###   ########.fr       */
+/*   Created: 2023/07/25 16:49:00 by vde-frei          #+#    #+#             */
+/*   Updated: 2023/07/27 11:32:06 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "./includes/libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int				index;
+	unsigned char	*string;
+
+	string = (unsigned char *)s;
+	index = ft_strlen(s);
+	while (index)
+	{
+		if (string[index] == (unsigned char)c)
+			return ((char *)(string + index));
+		--index;
+	}
+	if (string[index] == (unsigned char)c)
+		return ((char *)(string + index));
+	return (NULL);
+}
