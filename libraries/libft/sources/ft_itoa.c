@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "../includes/libft.h"
 
 static int	ft_feedback(int *count, int n)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "../includes/libft.h"
 
 static void	alloc_mem(char **split_array, char const *s, char c)
 {

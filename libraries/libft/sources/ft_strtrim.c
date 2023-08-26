@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_end(char const *s1, char const *set, size_t len)
 {

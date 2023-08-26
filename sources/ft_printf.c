@@ -6,8 +6,13 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/26 05:15:33 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/08/26 09:53:35 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../includes/ft_printf.h"
+
+int	main()
+{
+	return (0);
+}
