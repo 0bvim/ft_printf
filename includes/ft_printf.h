@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/29 01:51:45 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/08/29 08:29:30 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,7 @@
 # define HEX_U_PREFIX "0X"
 # define OCT_PREFIX "0"
 
-/* enum and or structs */
-
-typedef enum e_flags
-{
-	c = 0x63,
-	s = 0x73,
-	p = 0x70,
-	i = 0x69,
-	u = 0x75,
-	x = 0x78,
-	X = 0x58,
-	d = 0x64,
-	percent = 0x25,
-}		t_flag;
+/* structs */
 
 typedef struct s_elements
 {
@@ -57,5 +44,8 @@ typedef struct s_elements
 
 /* functions */
 int	ft_printf(const char *form, ...);
+
+/* aux functions */
+int	ft_istype(char c);
 
 #endif /* FT_PRINTF */
