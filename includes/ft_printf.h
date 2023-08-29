@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/28 14:37:17 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/08/29 01:51:45 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,27 @@
 
 /* enum and or structs */
 
-typedef enum e_specifiers
+typedef enum e_flags
 {
-	c = 'c',
-	s = 's',
-	p = 'p',
-	i = 'i',
-	u = 'u',
-	x = 'x',
-	X = 'X',
-	d = 'd',
-	percent = '%',
+	c = 0x63,
+	s = 0x73,
+	p = 0x70,
+	i = 0x69,
+	u = 0x75,
+	x = 0x78,
+	X = 0x58,
+	d = 0x64,
+	percent = 0x25,
 }		t_flag;
+
+typedef struct s_elements
+{
+	unsigned char	flags;
+	int		width;
+	int		precision;
+	char		type;
+}			t_element;
+
 /* functions */
 int	ft_printf(const char *form, ...);
 
