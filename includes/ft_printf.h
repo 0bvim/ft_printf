@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "../libraries/libft/includes/libft.h"
 
 /* defines */
 # define HEX_LW "0123456789abcdef"
