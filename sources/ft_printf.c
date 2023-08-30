@@ -31,5 +31,9 @@ int	ft_printf(const char *fmt, ...)
 
 static int	get_element(const char *fmt, va_list ap)
 {
+	int	len;
+
+	len = 0;
 	/* I really need to rest now... cya... */
+	return (len);
 }
