@@ -19,3 +19,5 @@ int	ft_istype(char c)
 		return (1);
 	return (0);
 }
+
+/* int */
