@@ -20,4 +20,7 @@ int	ft_istype(char c)
 	return (0);
 }
 
-/* int */
+int	is_digit(int c)
+{
+	return (c >= 0x30 && c <= 0x39);
+}
