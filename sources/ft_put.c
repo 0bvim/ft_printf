@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags_utils.c                                   :+:      :+:    :+:   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vde-frei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 07:52:32 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/29 08:27:40 by vde-frei         ###   ########.fr       */
+/*   Created: 2023/08/31 05:42:12 by vde-frei          #+#    #+#             */
+/*   Updated: 2023/08/31 05:42:12 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_istype(char c)
+void	ft_putchar(char c)
 {
-	if (c == 0x58 || c == 0x63 || c == 0x64 || c == 0x69 || c == 0x70
-		|| c == 0x73 || c == 0x75 || c == 0x78)
-		return (1);
-	return (0);
+	write(STDOUT_FILENO, &c, 1);
 }
 
-int	is_digit(int c)
+void	ft_putstr(char *str)
 {
-	return (c >= 0x30 && c <= 0x39);
-}
-
-size_t	ft_strlen(char *str)
-{
-	size_t	len;
-
-	len = 0;
 	while (*str != '\0')
 	{
-		len++;
+		write (STDOUT_FILENO, str, ft_strlen(str));
 		str++;
 	}
-	return (len);
 }

@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <unistd.h>
 
-static void	get_0x25(const char *fmt, int *len);
+static void	get_0x25(const char *fmt, int *len, va_list ap);
+static void	verify_flags(const char *fmt, int *len,
+				va_list ap, t_element *info);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -24,12 +25,12 @@ int	ft_printf(const char *fmt, ...)
 	if (!fmt)
 		return (0);
 	va_start(ap, fmt);
-	get_0x25(fmt, &len);	
+	get_0x25(fmt, &len, ap);
 	va_end(ap);
 	return (len);
 }
 
-static void	get_0x25(const char *fmt, int *len)
+static void	get_0x25(const char *fmt, int *len, va_list ap)
 {
 	t_element	*info;
 
@@ -41,10 +42,22 @@ static void	get_0x25(const char *fmt, int *len)
 		{
 			fmt++;
 			info->type = *fmt;
-			//implement another function to use va_arg and then another to print things
+			verify_flags(fmt, len, ap, info);
+			fmt++;
 		}
-		write(1, fmt, 1);
-		fmt++;
-		*len += 1;
+		else
+		{
+			write(STDOUT_FILENO, fmt, 1);
+			fmt++;
+			*len += 1;
+		}
+	}
+}
+
+static void	verify_flags(const char *fmt, int *len, va_list ap, t_element *info)
+{
+	if (ft_istype(info->type))
+	{
+		print_var(info, ap, len, fmt);
 	}
 }
