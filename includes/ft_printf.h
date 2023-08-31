@@ -41,7 +41,7 @@ typedef struct s_elements
 	char			type;
 }					t_element;
 
-/* functions */
+/* main function */
 int					ft_printf(const char *form, ...);
 
 /* flag and aux functions */
@@ -54,5 +54,6 @@ void				print_var(t_element *info, va_list ap, int *len,
 						const char *fmt);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
+void				ft_putnbr(long long int number);
 
 #endif /* FT_PRINTF */

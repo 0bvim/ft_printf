@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_var.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-frei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 05:29:10 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/31 05:29:10 by vde-frei         ###   ########.fr       */
+/*   Created: 2023/08/31 10:27:09 by vde-frei          #+#    #+#             */
+/*   Updated: 2023/08/31 10:27:09 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,13 @@ void	print_var(t_element *info, va_list ap, int *len, const char *fmt)
 	if (info->type == 0x63)
 	{
 		ft_putchar(va_arg(ap, int));
+	}
+	else if (info->type == 0x73)
+	{
+		ft_putstr(va_arg(ap, char *));
+	}
+	else if (info->type == 0x64 || info->type == 0x69)
+	{
+		ft_putnbr(va_arg(ap, int));
 	}
 }
