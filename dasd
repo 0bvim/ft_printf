@@ -1,0 +1,261 @@
+[33mcommit a942c9176ca740d30ca6c2d4f827b834453aea2a[m[33m ([m[1;36mHEAD -> [m[1;32mmain_function[m[33m, [m[1;31morigin/main_function[m[33m)[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Wed Aug 30 11:32:56 2023 -0300
+
+    fix: just created the len variable to test branch
+     On branch main_function
+     Changes to be committed:
+            modified:   ft_printf.c
+
+[33mcommit 2b007f42737f0f628f55159d0b3304cbed01c2c7[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Wed Aug 30 10:55:49 2023 -0300
+
+    fix: removed all copied stuff, and will implement by myself again
+     Changes to be committed:
+            modified:   ft_flags_utils.c
+            modified:   ft_printf.c
+
+[33mcommit 421ef4c5e5be86ec3b0496eaf52d8ae44f80feb6[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Wed Aug 30 06:17:13 2023 -0300
+
+    fix: need to implement some functions
+     Changes to be committed:
+            modified:   includes/ft_printf.h
+            modified:   sources/ft_printf.c
+
+[33mcommit 278963c5949d1fde41da6dc756d702e5528c38ad[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Tue Aug 29 09:09:23 2023 -0300
+
+    fix: updated function and create flags file
+     Changes to be committed:
+            modified:   includes/ft_printf.h
+            new file:   sources/ft_flags_utils.c
+            modified:   sources/ft_printf.c
+
+[33mcommit 257a20621862325b45356c40684a281cc0edf02b[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Tue Aug 29 02:13:39 2023 -0300
+
+    fix: forgot of that modification
+     Changes to be committed:
+            modified:   includes/ft_printf.h
+
+[33mcommit 36bac3ad8ada8daa8d313629cf8c79b2fb789fb7[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Tue Aug 29 02:12:37 2023 -0300
+
+    fix: updated files and implement start of code
+     Changes to be committed:
+            modified:   ft_printf.c
+    
+     Changes not staged for commit:
+            modified:   ../includes/ft_printf.h
+
+[33mcommit 16e91cc771534131c322d445c52ed10a983a7139[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Mon Aug 28 14:37:20 2023 -0300
+
+    fix: included some enums
+            Changes to be committed:
+            modified:   includes/ft_printf.h
+
+[33mcommit 0f17a736e10a754fcd699b5f74ecd135000f6ec0[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Mon Aug 28 00:52:48 2023 -0300
+
+    fix: updated main file.
+     Changes to be committed:
+            modified:   ft_printf.c
+
+[33mcommit bd002db096b7f9800b64eab84a1e431c7c2feaad[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Sat Aug 26 10:52:52 2023 -0300
+
+    fix: updated makefile
+     Changes to be committed:
+            modified:   Makefile
+            renamed:    include/ft_printf.h -> includes/ft_printf.h
+            modified:   libraries/libft/Makefile
+            modified:   libraries/libft/sources/ft_atoi.c
+            modified:   libraries/libft/sources/ft_bzero.c
+            modified:   libraries/libft/sources/ft_calloc.c
+            modified:   libraries/libft/sources/ft_isalnum.c
+            modified:   libraries/libft/sources/ft_isalpha.c
+            modified:   libraries/libft/sources/ft_isascii.c
+            modified:   libraries/libft/sources/ft_isdigit.c
+            modified:   libraries/libft/sources/ft_isprint.c
+            modified:   libraries/libft/sources/ft_itoa.c
+            modified:   libraries/libft/sources/ft_lstadd_back.c
+            modified:   libraries/libft/sources/ft_lstadd_front.c
+            modified:   libraries/libft/sources/ft_lstclear.c
+            modified:   libraries/libft/sources/ft_lstdelone.c
+            modified:   libraries/libft/sources/ft_lstiter.c
+            modified:   libraries/libft/sources/ft_lstlast.c
+            modified:   libraries/libft/sources/ft_lstmap.c
+            modified:   libraries/libft/sources/ft_lstnew.c
+            modified:   libraries/libft/sources/ft_lstsize.c
+            modified:   libraries/libft/sources/ft_memchr.c
+            modified:   libraries/libft/sources/ft_memcmp.c
+            modified:   libraries/libft/sources/ft_memcpy.c
+            modified:   libraries/libft/sources/ft_memmove.c
+            modified:   libraries/libft/sources/ft_memset.c
+            modified:   libraries/libft/sources/ft_putchar_fd.c
+            modified:   libraries/libft/sources/ft_putendl_fd.c
+            modified:   libraries/libft/sources/ft_putnbr_fd.c
+            modified:   libraries/libft/sources/ft_putstr_fd.c
+            modified:   libraries/libft/sources/ft_split.c
+            modified:   libraries/libft/sources/ft_strchr.c
+            modified:   libraries/libft/sources/ft_strdup.c
+            modified:   libraries/libft/sources/ft_striteri.c
+            modified:   libraries/libft/sources/ft_strjoin.c
+            modified:   libraries/libft/sources/ft_strlcat.c
+            modified:   libraries/libft/sources/ft_strlcpy.c
+            modified:   libraries/libft/sources/ft_strlen.c
+            modified:   libraries/libft/sources/ft_strmapi.c
+            modified:   libraries/libft/sources/ft_strncmp.c
+            modified:   libraries/libft/sources/ft_strnstr.c
+            modified:   libraries/libft/sources/ft_strrchr.c
+            modified:   libraries/libft/sources/ft_strtrim.c
+            modified:   libraries/libft/sources/ft_substr.c
+            modified:   libraries/libft/sources/ft_tolower.c
+            modified:   libraries/libft/sources/ft_toupper.c
+            modified:   sources/ft_printf.c
+
+[33mcommit d47ed42ae60072e325c7974ce36bab8179a7445a[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Sat Aug 26 06:58:19 2023 -0300
+
+    fix: renamed src
+     Changes to be committed:
+            renamed:    src/ft_printf.c -> sources/ft_printf.c
+
+[33mcommit fdadbb52e9504ef90115e2966a3c3f7214962696[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Sat Aug 26 06:57:16 2023 -0300
+
+    fix: updated libft dir and implemented some files.
+     Changes to be committed:
+            modified:   Makefile
+            new file:   include/ft_printf.h
+            renamed:    libft/Makefile -> libraries/libft/Makefile
+            renamed:    libft/libft.h -> libraries/libft/includes/libft.h
+            renamed:    libft/ft_atoi.c -> libraries/libft/sources/ft_atoi.c
+            renamed:    libft/ft_bzero.c -> libraries/libft/sources/ft_bzero.c
+            renamed:    libft/ft_calloc.c -> libraries/libft/sources/ft_calloc.c
+            renamed:    libft/ft_isalnum.c -> libraries/libft/sources/ft_isalnum.c
+            renamed:    libft/ft_isalpha.c -> libraries/libft/sources/ft_isalpha.c
+            renamed:    libft/ft_isascii.c -> libraries/libft/sources/ft_isascii.c
+            renamed:    libft/ft_isdigit.c -> libraries/libft/sources/ft_isdigit.c
+            renamed:    libft/ft_isprint.c -> libraries/libft/sources/ft_isprint.c
+            renamed:    libft/ft_itoa.c -> libraries/libft/sources/ft_itoa.c
+            renamed:    libft/ft_lstadd_back.c -> libraries/libft/sources/ft_lstadd_back.c
+            renamed:    libft/ft_lstadd_front.c -> libraries/libft/sources/ft_lstadd_front.c
+            renamed:    libft/ft_lstclear.c -> libraries/libft/sources/ft_lstclear.c
+            renamed:    libft/ft_lstdelone.c -> libraries/libft/sources/ft_lstdelone.c
+            renamed:    libft/ft_lstiter.c -> libraries/libft/sources/ft_lstiter.c
+            renamed:    libft/ft_lstlast.c -> libraries/libft/sources/ft_lstlast.c
+            renamed:    libft/ft_lstmap.c -> libraries/libft/sources/ft_lstmap.c
+            renamed:    libft/ft_lstnew.c -> libraries/libft/sources/ft_lstnew.c
+            renamed:    libft/ft_lstsize.c -> libraries/libft/sources/ft_lstsize.c
+            renamed:    libft/ft_memchr.c -> libraries/libft/sources/ft_memchr.c
+            renamed:    libft/ft_memcmp.c -> libraries/libft/sources/ft_memcmp.c
+            renamed:    libft/ft_memcpy.c -> libraries/libft/sources/ft_memcpy.c
+            renamed:    libft/ft_memmove.c -> libraries/libft/sources/ft_memmove.c
+            renamed:    libft/ft_memset.c -> libraries/libft/sources/ft_memset.c
+            renamed:    libft/ft_putchar_fd.c -> libraries/libft/sources/ft_putchar_fd.c
+            renamed:    libft/ft_putendl_fd.c -> libraries/libft/sources/ft_putendl_fd.c
+            renamed:    libft/ft_putnbr_fd.c -> libraries/libft/sources/ft_putnbr_fd.c
+            renamed:    libft/ft_putstr_fd.c -> libraries/libft/sources/ft_putstr_fd.c
+            renamed:    libft/ft_split.c -> libraries/libft/sources/ft_split.c
+            renamed:    libft/ft_strchr.c -> libraries/libft/sources/ft_strchr.c
+            renamed:    libft/ft_strdup.c -> libraries/libft/sources/ft_strdup.c
+            renamed:    libft/ft_striteri.c -> libraries/libft/sources/ft_striteri.c
+            renamed:    libft/ft_strjoin.c -> libraries/libft/sources/ft_strjoin.c
+            renamed:    libft/ft_strlcat.c -> libraries/libft/sources/ft_strlcat.c
+            renamed:    libft/ft_strlcpy.c -> libraries/libft/sources/ft_strlcpy.c
+            renamed:    libft/ft_strlen.c -> libraries/libft/sources/ft_strlen.c
+            renamed:    libft/ft_strmapi.c -> libraries/libft/sources/ft_strmapi.c
+            renamed:    libft/ft_strncmp.c -> libraries/libft/sources/ft_strncmp.c
+            renamed:    libft/ft_strnstr.c -> libraries/libft/sources/ft_strnstr.c
+            renamed:    libft/ft_strrchr.c -> libraries/libft/sources/ft_strrchr.c
+            renamed:    libft/ft_strtrim.c -> libraries/libft/sources/ft_strtrim.c
+            renamed:    libft/ft_substr.c -> libraries/libft/sources/ft_substr.c
+            renamed:    libft/ft_tolower.c -> libraries/libft/sources/ft_tolower.c
+            renamed:    libft/ft_toupper.c -> libraries/libft/sources/ft_toupper.c
+            modified:   src/ft_printf.c
+
+[33mcommit e5c2d5bb3f78e83c7fd76e6dd3b1433ddd166729[m
+Author: vde-frei <vde-frei@student.42sp.org.br>
+Date:   Fri Aug 25 22:00:00 2023 +0300
+
+    creating source file
+
+[33mcommit cc09351b3bd659f369516fba9181e6d4da64dee2[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Thu Aug 24 17:37:18 2023 -0300
+
+    fix: implemented only rules in makefile
+     Changes to be committed:
+            modified:   Makefile
+
+[33mcommit 57314254e6c33b50a8f2a5ba9f522d802973c668[m
+Author: Vinicius Pereira <niviciusdev@gmail.com>
+Date:   Thu Aug 24 17:26:52 2023 -0300
+
+    feat: Just structuring project. Implemented Makefile for ft_printf and libft directory
+     Changes to be committed:
+            new file:   Makefile
+            new file:   libft/Makefile
+            new file:   libft/ft_atoi.c
+            new file:   libft/ft_bzero.c
+            new file:   libft/ft_calloc.c
+            new file:   libft/ft_isalnum.c
+            new file:   libft/ft_isalpha.c
+            new file:   libft/ft_isascii.c
+            new file:   libft/ft_isdigit.c
+            new file:   libft/ft_isprint.c
+            new file:   libft/ft_itoa.c
+            new file:   libft/ft_lstadd_back.c
+            new file:   libft/ft_lstadd_front.c
+            new file:   libft/ft_lstclear.c
+            new file:   libft/ft_lstdelone.c
+            new file:   libft/ft_lstiter.c
+            new file:   libft/ft_lstlast.c
+            new file:   libft/ft_lstmap.c
+            new file:   libft/ft_lstnew.c
+            new file:   libft/ft_lstsize.c
+            new file:   libft/ft_memchr.c
+            new file:   libft/ft_memcmp.c
+            new file:   libft/ft_memcpy.c
+            new file:   libft/ft_memmove.c
+            new file:   libft/ft_memset.c
+            new file:   libft/ft_putchar_fd.c
+            new file:   libft/ft_putendl_fd.c
+            new file:   libft/ft_putnbr_fd.c
+            new file:   libft/ft_putstr_fd.c
+            new file:   libft/ft_split.c
+            new file:   libft/ft_strchr.c
+            new file:   libft/ft_strdup.c
+            new file:   libft/ft_striteri.c
+            new file:   libft/ft_strjoin.c
+            new file:   libft/ft_strlcat.c
+            new file:   libft/ft_strlcpy.c
+            new file:   libft/ft_strlen.c
+            new file:   libft/ft_strmapi.c
+            new file:   libft/ft_strncmp.c
+            new file:   libft/ft_strnstr.c
+            new file:   libft/ft_strrchr.c
+            new file:   libft/ft_strtrim.c
+            new file:   libft/ft_substr.c
+            new file:   libft/ft_tolower.c
+            new file:   libft/ft_toupper.c
+            new file:   libft/libft.h
+
+[33mcommit a97f6111ed1241457ce6bc9557bb0ce495628e6f[m
+Author: Vinicius Pereira <130008311+vinicius-f-pereira@users.noreply.github.com>
+Date:   Wed Aug 23 23:44:35 2023 -0300
+
+    Initial commit

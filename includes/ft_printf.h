@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 /* libs */
-# include <sys/types.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
