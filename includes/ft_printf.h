@@ -14,9 +14,10 @@
 # define FT_PRINTF_H
 
 /* libs */
+# include <stdarg.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 /* defines */
 # define HEX_LW "0123456789abcdef"
@@ -35,15 +36,23 @@
 typedef struct s_elements
 {
 	unsigned char	flags;
-	int		width;
-	int		precision;
-	char		type;
-}			t_element;
+	int				width;
+	int				precision;
+	char			type;
+}					t_element;
 
 /* functions */
-int	ft_printf(const char *form, ...);
+int					ft_printf(const char *form, ...);
 
-/* aux functions */
-int	ft_istype(char c);
+/* flag and aux functions */
+size_t				ft_strlen(char *str);
+int					ft_istype(char c);
+int					is_digit(int c);
+
+/* print functions */
+void				print_var(t_element *info, va_list ap, int *len,
+						const char *fmt);
+void				ft_putchar(char c);
+void				ft_putstr(char *str);
 
 #endif /* FT_PRINTF */
