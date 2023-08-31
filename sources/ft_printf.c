@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <unistd.h>
 
-static int	get_element(const char *fmt, va_list ap);
+static void	get_0x25(const char *fmt, int *len);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -20,20 +21,30 @@ int	ft_printf(const char *fmt, ...)
 	va_list	ap;
 
 	len = 0;
-	if (fmt == NULL)
+	if (!fmt)
 		return (0);
 	va_start(ap, fmt);
-	/* len = implement function to get element */
-	/* implement function to print variables */
+	get_0x25(fmt, &len);	
 	va_end(ap);
 	return (len);
 }
 
-static int	get_element(const char *fmt, va_list ap)
+static void	get_0x25(const char *fmt, int *len)
 {
-	int	len;
+	t_element	*info;
 
-	len = 0;
-	/* I really need to rest now... cya... */
-	return (len);
+	if (!fmt)
+		return ;
+	while (*fmt != '\0')
+	{
+		if (*fmt == 0x25)
+		{
+			fmt++;
+			info->type = *fmt;
+			//implement another function to use va_arg and then another to print things
+		}
+		write(1, fmt, 1);
+		fmt++;
+		*len += 1;
+	}
 }
