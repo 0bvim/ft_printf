@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-void	print_var(t_element *info, va_list ap, int *len, const char *fmt)
+void	print_var(t_element *info, va_list ap, int *len)
 {
 	char	test;
 	if (info->type == 0x63)

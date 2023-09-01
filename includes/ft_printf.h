@@ -49,9 +49,9 @@ int					ft_istype(char c);
 int					is_digit(int c);
 
 /* print functions */
-void				print_var(t_element *info, va_list ap, int *len,
-						const char *fmt);
+void				print_var(t_element *info, va_list ap, int *len);
 int					ft_putstr(char *str);
+int					ft_putchar(char c);
 void				ft_putnbr(long long int number, int *len);
 
 #endif /* FT_PRINTF */

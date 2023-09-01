@@ -17,7 +17,7 @@ LIBS_PATH 	= 	-L$(LIBFT_PATH)
 LIBS		=	-lft
 INCLUDES	=	-I ./includes -I $(LIBFT_PATH)/includes
 CFLAGS		=	-Wall -Wextra -Werror $(INCLUDES)
-FILES		=	ft_printf.c
+FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
 SRCS		=	$(addprefix sources/, $(FILES))
 OBJS		=	$(SRCS:.c=.o)
 AR		=	ar -rc

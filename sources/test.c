@@ -15,16 +15,12 @@
 
 int main(int argc, char *argv[])
 {
-	char	test_char;
 	char	test_char1[13] = "Stete te amo";
-	int	number = 0;
-	int	number1 = 0;
-
-
-	test_char = 'a';
-	number = printf("Libc: %c\noi %s\nnbr: %d and\n%i\n", test_char, test_char1, number, number1);
-	number1 = ft_printf("MyPf: %c\noi %s\nnbr: %d and\n%i\n", test_char, test_char1, number, number1);
-	printf("Libc: %c\noi %s\nnbr: %d and\n%i\n", test_char, test_char1, number, number1);
-	ft_printf("MyPf: %c\noi %s\nnbr: %d and\n%i\n", test_char, test_char1, number, number1);
+	char	test_char = 'a';
+	int		number1 = 0;
+	int		number = printf("Libc: %c\n%s\n%d\n%i\n", test_char, test_char1, number, number1);
+	number1 = ft_printf("MyPf: %c\n%s\n%d\n%i\n", test_char, test_char1, number, number1);
+	printf("\n---------------------------\n");
+	printf("Original %d\nFalcie %d\n", number, number1);
 	return 0;
 }

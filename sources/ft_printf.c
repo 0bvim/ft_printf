@@ -13,8 +13,7 @@
 #include "../includes/ft_printf.h"
 
 static void	get_0x25(const char *fmt, int *len, va_list ap);
-static void	verify_flags(const char *fmt, int *len,
-				va_list ap, t_element *info);
+static void	verify_flags(int *len, va_list ap, t_element *info);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -41,8 +40,11 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 		if (*fmt == 0x25)
 		{
 			fmt++;
+			info->flags = 0;
+			info->width = 0;
+			info->precision = 0;
 			info->type = *fmt;
-			verify_flags(fmt, len, ap, info);
+			verify_flags(len, ap, info);
 			fmt++;
 		}
 		else
@@ -53,10 +55,10 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 	}
 }
 
-static void	verify_flags(const char *fmt, int *len, va_list ap, t_element *info)
+static void	verify_flags(int *len, va_list ap, t_element *info)
 {
 	if (ft_istype(info->type))
 	{
-		print_var(info, ap, len, fmt);
+		print_var(info, ap, len);
 	}
 }
