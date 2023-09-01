@@ -15,7 +15,6 @@
 
 /* libs */
 # include <stdarg.h>
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -52,8 +51,7 @@ int					is_digit(int c);
 /* print functions */
 void				print_var(t_element *info, va_list ap, int *len,
 						const char *fmt);
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_putnbr(long long int number);
+int					ft_putstr(char *str);
+void				ft_putnbr(long long int number, int *len);
 
 #endif /* FT_PRINTF */

@@ -47,9 +47,8 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 		}
 		else
 		{
-			write(STDOUT_FILENO, fmt, 1);
+			*len += write(STDOUT_FILENO, fmt, sizeof(char));
 			fmt++;
-			*len += 1;
 		}
 	}
 }

@@ -14,16 +14,18 @@
 
 void	print_var(t_element *info, va_list ap, int *len, const char *fmt)
 {
+	char	test;
 	if (info->type == 0x63)
 	{
-		ft_putchar(va_arg(ap, int));
+		test = va_arg(ap, int);
+		*len += write(STDOUT_FILENO, &test, sizeof(char));
 	}
 	else if (info->type == 0x73)
 	{
-		ft_putstr(va_arg(ap, char *));
+		*len += ft_putstr(va_arg(ap, char *));
 	}
 	else if (info->type == 0x64 || info->type == 0x69)
 	{
-		ft_putnbr(va_arg(ap, int));
+		ft_putnbr(va_arg(ap, int), len);
 	}
 }

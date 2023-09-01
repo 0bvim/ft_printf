@@ -12,28 +12,28 @@
 
 #include "../includes/ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	return (write(STDOUT_FILENO, &c, sizeof(char)));
 }
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	write (STDOUT_FILENO, str, ft_strlen(str));
+	return (write (STDOUT_FILENO, str, ft_strlen(str)));
 }
 
-void	ft_putnbr(long long int number)
+void	ft_putnbr(long long int number, int *len)
 {
 	if (number < 0)
 	{
-		write(STDOUT_FILENO, "-", 1);
+		*len += write(STDOUT_FILENO, "-", sizeof(char));
 		number *= -1;
 	}
 	if (number >= 10)
 	{
-		ft_putnbr(number / 10);
-		ft_putnbr(number % 10);
+		ft_putnbr(number / 10, len);
+		ft_putnbr(number % 10, len);
 	}
 	else
-		ft_putchar(number + '0');
+		*len += ft_putchar(number + '0');
 }
