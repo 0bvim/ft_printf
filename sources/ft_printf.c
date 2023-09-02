@@ -35,6 +35,7 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 
 	if (!fmt)
 		return ;
+	info = malloc(sizeof(t_element));
 	while (*fmt != '\0')
 	{
 		if (*fmt == 0x25)
@@ -53,6 +54,7 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			fmt++;
 		}
 	}
+	free(info);
 }
 
 static void	verify_flags(int *len, va_list ap, t_element *info)

@@ -13,14 +13,21 @@
 #include <stdio.h>
 #include "../includes/ft_printf.h"
 
-int main(int argc, char *argv[])
+int	main(void)
 {
-	char	test_char1[13] = "Stete te amo";
-	char	test_char = 'a';
-	int		number1 = 0;
-	int		number = printf("Libc: %c\n%s\n%d\n%i\n", test_char, test_char1, number, number1);
-	number1 = ft_printf("MyPf: %c\n%s\n%d\n%i\n", test_char, test_char1, number, number1);
-	printf("\n---------------------------\n");
-	printf("Original %d\nFalcie %d\n", number, number1);
-	return 0;
+	int	ft;
+	int	stdio;
+
+	ft_printf("ft_printf: ");
+	ft = ft_printf("%s %d %c %i", "bombastic", 10, 'Y', 20);
+	printf("X\n___printf: ");
+	stdio = printf("%s %d %c %i", "bombastic", 10, 'Y', 20);
+	if (ft == stdio)
+		printf("X\nSame return values.");
+	else
+	{
+		printf("X\ndifference in return values.\n");
+		printf("returned: %d\noriginal: %d\n", ft, stdio);
+	}
+	return (0);
 }
