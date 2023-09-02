@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <stdarg.h>
 
 void	print_var(t_element *info, va_list ap, int *len)
 {
@@ -24,8 +25,11 @@ void	print_var(t_element *info, va_list ap, int *len)
 	{
 		*len += ft_putstr(va_arg(ap, char *));
 	}
-	else if (info->type == 0x64 || info->type == 0x69)
+	else if (info->type == 0x64 || info->type == 0x69 || info->type == 0x75)
 	{
+		if (info->type == 0x75)
+			ft_put_u_nbr(va_arg(ap, unsigned int), len);
+		else
 		ft_putnbr(va_arg(ap, int), len);
 	}
 }

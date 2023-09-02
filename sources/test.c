@@ -19,9 +19,9 @@ int	main(void)
 	int	stdio;
 
 	ft_printf("ft_printf: ");
-	ft = ft_printf("%s %d %c %i", "bombastic", 10, 'Y', 20);
+	ft = ft_printf("%s %d %c %i %u", "bombastic", 10, 'Y', 20, 1123);
 	printf("X\n___printf: ");
-	stdio = printf("%s %d %c %i", "bombastic", 10, 'Y', 20);
+	stdio = printf("%s %d %c %i %u", "bombastic", 10, 'Y', 20, 1123);
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else

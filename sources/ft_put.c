@@ -37,3 +37,14 @@ void	ft_putnbr(long long int number, int *len)
 	else
 		*len += ft_putchar(number + '0');
 }
+
+void	ft_put_u_nbr(unsigned long int number, int *len)
+{
+	if (number >= 10)
+	{
+		ft_putnbr(number / 10, len);
+		ft_putnbr(number % 10, len);
+	}
+	else
+		*len += ft_putchar(number + '0');
+}
