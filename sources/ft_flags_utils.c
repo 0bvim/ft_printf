@@ -15,7 +15,7 @@
 int	ft_istype(char c)
 {
 	if (c == 0x58 || c == 0x63 || c == 0x64 || c == 0x69 || c == 0x70
-		|| c == 0x73 || c == 0x75 || c == 0x78)
+		|| c == 0x73 || c == 0x75 || c == 0x78 || c == 0x25)
 		return (1);
 	return (0);
 }

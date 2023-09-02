@@ -25,21 +25,39 @@ int	ft_putstr(char *str)
 	return (write (STDOUT_FILENO, str, ft_strlen(str)));
 }
 
-void	ft_putnbr_base(long int number, int *len, char *base, int nbase)
+void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
 {
-//	printf("\nlen: %d", *len);
-	if (number < 0)
+	if (nbr < 0)
 	{
-		number *= -1;
+		nbr *= -1;
 		*len += write(STDOUT_FILENO, "-", sizeof(char));
 	}
-	if (number < nbase)
+	if (nbr < nbase)
 	{
-		*len += ft_putchar(base[number]);
+		*len += ft_putchar(base[nbr]);
 	}
 	else
 	{
-		ft_putnbr_base(number / nbase, len, base, nbase);
-		ft_putnbr_base(number % nbase, len, base, nbase);
+		ft_putnbr_base(nbr / nbase, len, base, nbase);
+		ft_putnbr_base(nbr % nbase, len, base, nbase);
+	}
+}
+
+void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
+{
+	if (!ptr || ptr == 0)
+	{
+		*len += ft_putstr(NULL_PTR); 
+		return ;
+	}
+	*len += ft_putstr(HEX_L_PREFIX);
+	if (ptr < (size_t)nbase)
+	{
+		*len += ft_putchar(base[ptr]);
+	}
+	else
+	{
+		ft_putnbr_base(ptr / nbase, len, base, nbase);
+		ft_putnbr_base(ptr % nbase, len, base, nbase);
 	}
 }

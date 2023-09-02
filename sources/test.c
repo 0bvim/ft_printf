@@ -22,16 +22,23 @@ int	main(void)
 //	printf("\n");
 //	int nbr = printf("%X", 11);
 //	printf("\n\nint nbr: %X", nbr);
-	ft_printf("ft_printf: ");
-	ft = ft_printf("%s %d %c %i %u %x %X", "bombastic", 10, 'Y', 20, 1123, 921, -921);
-	printf("X\n___printf: ");
-	stdio = printf("%s %d %c %i %u %x %X", "bombastic", 10, 'Y', 20, 1123, 921, -921);
-	if (ft == stdio)
-		printf("X\nSame return values.");
-	else
-	{
-		printf("X\ndifference in return values.\n");
-		printf("returned: %d\noriginal: %d\n", ft, stdio);
-	}
+	printf("Original: ");
+	printf(" %p %p ", 0, 0);
+	printf("\n");
+	ft_printf("Falcie: ");
+	ft_printf(" %p %p ", 0, 0);
+//	char	*str = NULL;
+//	void	*ptr = (void *)-1;
+//	ft_printf("ft_printf: ");
+//	ft = ft_printf("%s %d %c %i %u %x %X %% %p %p %p %p %p", "bombastic", 10, 'Y', 20, 1123, 921, -16774184, ptr, 1, 15, 16, 17);
+//	printf("X\n___printf: ");
+//	stdio = printf("%s %d %c %i %u %x %X %% %p %p %p %p %p", "bombastic", 10, 'Y', 20, 1123, 921, -16774184, ptr, 1, 15, 16, 17);
+//	if (ft == stdio)
+//		printf("X\nSame return values.");
+//	else
+//	{
+//		printf("X\ndifference in return values.\n");
+//		printf("returned: %d\noriginal: %d\n", ft, stdio);
+//	}
 	return (0);
 }
