@@ -52,7 +52,6 @@ int					is_digit(int c);
 void				print_var(t_element *info, va_list ap, int *len);
 int					ft_putstr(char *str);
 int					ft_putchar(char c);
-void				ft_putnbr(long long int number, int *len);
-void				ft_put_u_nbr(unsigned long int number, int *len);
+void				ft_putnbr_base(long int number, int *len, char *base, int nbase);
 
 #endif /* FT_PRINTF */

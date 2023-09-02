@@ -17,11 +17,15 @@ int	main(void)
 {
 	int	ft;
 	int	stdio;
-
+//	printf("\n");
+//	ft_printf("%X", 11);
+//	printf("\n");
+//	int nbr = printf("%X", 11);
+//	printf("\n\nint nbr: %X", nbr);
 	ft_printf("ft_printf: ");
-	ft = ft_printf("%s %d %c %i %u", "bombastic", 10, 'Y', 20, 1123);
+	ft = ft_printf("%s %d %c %i %u %x %X", "bombastic", 10, 'Y', 20, 1123, 921, -921);
 	printf("X\n___printf: ");
-	stdio = printf("%s %d %c %i %u", "bombastic", 10, 'Y', 20, 1123);
+	stdio = printf("%s %d %c %i %u %x %X", "bombastic", 10, 'Y', 20, 1123, 921, -921);
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <stdio.h>
 
 int	ft_putchar(char c)
 {
@@ -19,32 +20,26 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
+	if (str == NULL)
+		return (write (STDOUT_FILENO, NULL_STR, ft_strlen(NULL_STR)));
 	return (write (STDOUT_FILENO, str, ft_strlen(str)));
 }
 
-void	ft_putnbr(long long int number, int *len)
+void	ft_putnbr_base(long int number, int *len, char *base, int nbase)
 {
+//	printf("\nlen: %d", *len);
 	if (number < 0)
 	{
-		*len += write(STDOUT_FILENO, "-", sizeof(char));
 		number *= -1;
+		*len += write(STDOUT_FILENO, "-", sizeof(char));
 	}
-	if (number >= 10)
+	if (number < nbase)
 	{
-		ft_putnbr(number / 10, len);
-		ft_putnbr(number % 10, len);
+		*len += ft_putchar(base[number]);
 	}
 	else
-		*len += ft_putchar(number + '0');
-}
-
-void	ft_put_u_nbr(unsigned long int number, int *len)
-{
-	if (number >= 10)
 	{
-		ft_putnbr(number / 10, len);
-		ft_putnbr(number % 10, len);
+		ft_putnbr_base(number / nbase, len, base, nbase);
+		ft_putnbr_base(number % nbase, len, base, nbase);
 	}
-	else
-		*len += ft_putchar(number + '0');
 }
