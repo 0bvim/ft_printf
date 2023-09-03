@@ -18,25 +18,34 @@ LIBS		=	-lft
 INCLUDES	=	-I ./includes -I $(LIBFT_PATH)/includes
 CFLAGS		=	-Wall -Wextra -Werror $(INCLUDES)
 FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
+FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c ft_flags_utils_bonus.c
 SRCS		=	$(addprefix sources/, $(FILES))
+BSRCS		=	$(addprefix bonus/, $(FILESB))
 OBJS		=	$(SRCS:.c=.o)
+BOBJ		=	$(BSRCS:.c=.o)
 AR		=	ar -rc
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_PATH) --no-print-directory
-	@cp $(LIBFT_PATH)/libft.a $(NAME)
 	@$(AR) $(NAME) $(OBJS)
+
+bonus: $(BOBJ) 
+	@$(AR) $(NAME) $(BOBJ)
 
 clean:
 	$(RM) $(OBJS)
-	$(MAKE) clean -C $(LIBFT_PATH) --no-print-directory
 
-fclean:
-	$(RM) $(OBJS) $(NAME)
-	$(MAKE) fclean -C $(LIBFT_PATH) --no-print-directory
+fclean: clean
+	$(RM) $(NAME)
+
+cleanb: 
+	$(RM) $(BOBJ)
+
+fcleanb: cleanb
+
+rebonus: fcleanb bonus 
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re cleanb fcleanb rebonus
