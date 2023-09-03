@@ -47,7 +47,7 @@ void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
 {
 	if (!ptr || ptr == 0)
 	{
-		*len += ft_putstr(NULL_PTR); 
+		*len += ft_putstr(NULL_PTR);
 		return ;
 	}
 	*len += ft_putstr(HEX_L_PREFIX);

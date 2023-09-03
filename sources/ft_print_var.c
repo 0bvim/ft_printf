@@ -15,7 +15,7 @@
 void	print_var(t_element *info, va_list ap, int *len)
 {
 	if (info->type == 0x63)
-		*len += ft_putchar(va_arg(ap, int)); 
+		*len += ft_putchar(va_arg(ap, int));
 	else if (info->type == 0x25)
 		*len += write (STDOUT_FILENO, "%", sizeof(char));
 	else if (info->type == 0x73)
