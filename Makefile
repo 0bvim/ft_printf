@@ -14,19 +14,22 @@
 NAME		=	libftprintf.a
 LIBS		=	-lft
 INCLUDES	=	-I ./includes
-CFLAGS		=	-Wall -Wextra -Werror $(INCLUDES)
+CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES)
 FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
 FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c ft_flags_utils_bonus.c
 SRCS		=	$(addprefix sources/, $(FILES))
 BSRCS		=	$(addprefix bonus/, $(FILESB))
 OBJS		=	$(SRCS:.c=.o)
 BOBJ		=	$(BSRCS:.c=.o)
-AR		=	ar -rc
+AR		=	ar -rcs
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
+
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(BOBJ) 
 	@$(AR) $(NAME) $(BOBJ)
@@ -42,7 +45,7 @@ cleanbonus:
 
 fcleanbonus: cleanbonus
 
-rebonus: fcleanb bonus 
+rebonus: fcleanbonus bonus 
 
 re: fclean all
 
