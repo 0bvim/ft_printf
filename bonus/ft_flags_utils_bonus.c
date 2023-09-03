@@ -34,3 +34,11 @@ size_t	ft_strlen(char *str)
 		len++;
 	return (len);
 }
+
+int	ft_is_bonus(char f)
+{
+	if (f == 0x23 || f == 0x2B || f == 0x2D || f == 0x2E || f == 0x30
+			|| f == 0x20)
+		return (1);
+	return (0);
+}

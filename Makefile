@@ -12,10 +12,8 @@
 
 ### COMMOM ###
 NAME		=	libftprintf.a
-LIBFT_PATH	=	./libraries/libft
-LIBS_PATH 	= 	-L$(LIBFT_PATH)
 LIBS		=	-lft
-INCLUDES	=	-I ./includes -I $(LIBFT_PATH)/includes
+INCLUDES	=	-I ./includes
 CFLAGS		=	-Wall -Wextra -Werror $(INCLUDES)
 FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
 FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c ft_flags_utils_bonus.c
@@ -39,10 +37,10 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-cleanb: 
+cleanbonus: 
 	$(RM) $(BOBJ)
 
-fcleanb: cleanb
+fcleanbonus: cleanbonus
 
 rebonus: fcleanb bonus 
 

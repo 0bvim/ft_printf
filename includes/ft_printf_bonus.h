@@ -47,6 +47,7 @@ int					ft_printf(const char *form, ...);
 size_t				ft_strlen(char *str);
 int					ft_istype(char c);
 int					is_digit(int c);
+int					ft_is_bonus(char f);
 
 /* print functions */
 void				print_var(t_element *info, va_list ap, int *len);
@@ -54,5 +55,6 @@ int					ft_putstr(char *str);
 int					ft_putchar(char c);
 void				ft_putnbr_base(long nbr, int *len, char *base, int nbase);
 void				ft_put_pointer(size_t ptr, int *len, char *base, int nbase);
+void				print_bonus(t_element *info, va_list ap, int *len);
 
 #endif /* FT_PRINTF */

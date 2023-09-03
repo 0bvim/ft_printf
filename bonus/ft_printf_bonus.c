@@ -63,4 +63,11 @@ static void	verify_flags(int *len, va_list ap, t_element *info)
 	{
 		print_var(info, ap, len);
 	}
+	else if (ft_is_bonus(info->type))
+	{
+		if (info->type == '#')
+		{
+			print_bonus(info, ap, len);
+		}
+	}
 }

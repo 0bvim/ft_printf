@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
+#include <stdarg.h>
 
 void	print_var(t_element *info, va_list ap, int *len)
 {
@@ -36,4 +37,15 @@ void	print_var(t_element *info, va_list ap, int *len)
 	}
 	else if (info->type == 0x70)
 		ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
+}
+
+void	print_bonus(t_element *info, va_list ap, int *len)
+{
+	if (info->type == '#')
+	{
+		if (info->type + 1 == 'x')
+			ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
+		else
+			ft_put_pointer(va_arg(ap, size_t), len, HEX_UP, 16); 
+	}//verify why in printing 1byte more
 }
