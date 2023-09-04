@@ -18,7 +18,7 @@ int	main(void)
 {
 	int	ft;
 	int	stdio;
-	void	*ptr = (void *)-1;
+	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
 	ft = ft_printf("%s %d %c %i %u %x %X %% %p %#X", "bombastic", 10, 'Y', 20, 1123, 921, -16774184, ptr, 134);
 	printf("X\n___printf: ");

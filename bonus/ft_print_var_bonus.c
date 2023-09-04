@@ -43,20 +43,9 @@ void	print_bonus(t_element *info, va_list ap, int *len, const char *fmt)
 {
 	if (info->type == '#')
 	{
-		write(1, fmt, 1);
-		fmt++;
-		write(1, fmt, 1);
 		if (*fmt == 'x')
-		{
-			write(1, fmt, 1);
 			ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
-			write(1, fmt, 1);
-			fmt++;
-		}
 		else
-		{
 			ft_put_pointer(va_arg(ap, size_t), len, HEX_UP, 16);
-			fmt++;
-		}
 	}//verify why in printing 1byte more
 }

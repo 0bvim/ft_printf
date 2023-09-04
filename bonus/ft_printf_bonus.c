@@ -47,8 +47,10 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			info->type = *fmt;
 			verify_flags(len, ap, info, fmt);
 			fmt++;
+			if (ft_is_bonus(info->type))
+				fmt++;
 		}
-		else
+		else if (fmt)
 		{
 			*len += write(STDOUT_FILENO, fmt, sizeof(char));
 			fmt++;
@@ -68,7 +70,8 @@ static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 		if (info->type == '#')
 		{
 			fmt++;
-			print_bonus(info, ap, len);
+			print_bonus(info, ap, len, fmt);
+			fmt++;
 		}
 	}
 }
