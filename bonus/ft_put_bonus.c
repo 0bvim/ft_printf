@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_put_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/31 10:26:07 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:39:34 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,11 @@ void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
 		*len += ft_putstr(NULL_PTR);
 		return ;
 	}
-	*len += ft_putstr(HEX_L_PREFIX);
+	if (ft_strncmp(base, HEX_LW, ft_strlen(base)) == 0)
+		*len += ft_putstr(HEX_L_PREFIX);
+	else
+		*len += ft_putstr(HEX_U_PREFIX);
+
 	if (ptr < (size_t)nbase)
 	{
 		*len += ft_putchar(base[ptr]);

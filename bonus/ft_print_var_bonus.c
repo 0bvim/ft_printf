@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_var.c                                     :+:      :+:    :+:   */
+/*   ft_print_var_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:27:09 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/31 10:27:09 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:20:43 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,24 @@ void	print_var(t_element *info, va_list ap, int *len)
 		ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
 }
 
-void	print_bonus(t_element *info, va_list ap, int *len)
+void	print_bonus(t_element *info, va_list ap, int *len, const char *fmt)
 {
 	if (info->type == '#')
 	{
-		if (info->type + 1 == 'x')
+		write(1, fmt, 1);
+		fmt++;
+		write(1, fmt, 1);
+		if (*fmt == 'x')
+		{
+			write(1, fmt, 1);
 			ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
+			write(1, fmt, 1);
+			fmt++;
+		}
 		else
-			ft_put_pointer(va_arg(ap, size_t), len, HEX_UP, 16); 
+		{
+			ft_put_pointer(va_arg(ap, size_t), len, HEX_UP, 16);
+			fmt++;
+		}
 	}//verify why in printing 1byte more
 }

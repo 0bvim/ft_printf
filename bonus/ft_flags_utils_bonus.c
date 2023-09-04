@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags_utils.c                                   :+:      :+:    :+:   */
+/*   ft_flags_utils_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 07:52:32 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/29 08:27:40 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:31:47 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,18 @@ int	ft_is_bonus(char f)
 		return (1);
 	return (0);
 }
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	index;
+
+	index = 0;
+	if (n != 0)
+	{
+		while (s1[index] && (s1[index] == s2[index]) && index < n - 1)
+			index++;
+		return ((unsigned char)s1[index] - (unsigned char)s2[index]);
+	}
+	return (0);
+}
+

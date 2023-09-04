@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/30 01:47:00 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:41:57 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
 
 static void	get_0x25(const char *fmt, int *len, va_list ap);
-static void	verify_flags(int *len, va_list ap, t_element *info);
+static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -45,7 +45,7 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			info->width = 0;
 			info->precision = 0;
 			info->type = *fmt;
-			verify_flags(len, ap, info);
+			verify_flags(len, ap, info, fmt);
 			fmt++;
 		}
 		else
@@ -57,7 +57,7 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 	free(info);
 }
 
-static void	verify_flags(int *len, va_list ap, t_element *info)
+static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 {
 	if (ft_istype(info->type))
 	{
@@ -67,6 +67,7 @@ static void	verify_flags(int *len, va_list ap, t_element *info)
 	{
 		if (info->type == '#')
 		{
+			fmt++;
 			print_bonus(info, ap, len);
 		}
 	}

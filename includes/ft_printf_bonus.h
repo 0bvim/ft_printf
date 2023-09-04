@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/29 08:29:30 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:32:29 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ size_t				ft_strlen(char *str);
 int					ft_istype(char c);
 int					is_digit(int c);
 int					ft_is_bonus(char f);
+int					ft_strncmp(const char *s1,
+						const char *s2, size_t n);
 
 /* print functions */
 void				print_var(t_element *info, va_list ap, int *len);
@@ -55,6 +57,6 @@ int					ft_putstr(char *str);
 int					ft_putchar(char c);
 void				ft_putnbr_base(long nbr, int *len, char *base, int nbase);
 void				ft_put_pointer(size_t ptr, int *len, char *base, int nbase);
-void				print_bonus(t_element *info, va_list ap, int *len);
+void				print_bonus(t_element *info, va_list ap, int *len, const char *fmt);
 
 #endif /* FT_PRINTF */
