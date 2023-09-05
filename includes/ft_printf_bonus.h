@@ -32,7 +32,9 @@
 
 # define LONG_MAX_ 9223372036854775807
 # define LONG_MIN_ -9223372036854775808
+# define UINT_MAX_ 4294967295
 
+typedef unsigned long long int	large_int;
 /* structs */
 
 typedef struct s_elements
@@ -59,7 +61,7 @@ void				print_var(t_element *info, va_list ap, int *len);
 int					ft_putstr(char *str);
 int					ft_putchar(char c);
 void				ft_putnbr_base(long nbr, int *len, char *base, int nbase);
-void				ft_put_pointer(size_t ptr, int *len, char *base, int nbase);
+void				ft_put_pointer(large_int ptr, int *len, char *base, int nbase);
 void				print_bonus(t_element *info, va_list ap, int *len, const char *fmt);
 
 #endif /* FT_PRINTF */

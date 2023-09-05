@@ -42,9 +42,9 @@ void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
 	}
 }
 
-void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
+void	ft_put_pointer(large_int ptr, int *len, char *base, int nbase)
 {
-	if (ptr <= 0 || ptr > LONG_MAX_)
+	if (ptr > LONG_MAX_)
 	{
 		*len += write(STDOUT_FILENO, "0", sizeof(char));
 		return ;
@@ -54,14 +54,14 @@ void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
 		*len += ft_putstr(NULL_PTR);
 		return ;
 	}
+	if (ptr == LONG_MAX_)
+		ptr = UINT_MAX_;
 	if (ft_strncmp(base, HEX_LW, ft_strlen(base)) == 0 && ptr != 0)
 		*len += ft_putstr(HEX_L_PREFIX);
 	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
 	if (ptr < (size_t)nbase)
-	{
 		*len += ft_putchar(base[ptr]);
-	}
 	else
 	{
 		ft_putnbr_base(ptr / nbase, len, base, nbase);

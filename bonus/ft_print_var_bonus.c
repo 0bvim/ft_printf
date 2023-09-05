@@ -44,8 +44,8 @@ void	print_bonus(t_element *info, va_list ap, int *len, const char *fmt)
 	if (info->type == '#')
 	{
 		if (*fmt == 'x')
-			ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
+			ft_put_pointer(va_arg(ap, long int), len, HEX_LW, 16);
 		else
-			ft_put_pointer(va_arg(ap, size_t), len, HEX_UP, 16);
+			ft_put_pointer(va_arg(ap, long int), len, HEX_UP, 16);
 	}
 }
