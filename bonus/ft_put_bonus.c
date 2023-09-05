@@ -44,16 +44,20 @@ void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
 
 void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)
 {
-	if (!ptr || ptr == 0)
+	if (ptr <= 0 || ptr > LONG_MAX_)
+	{
+		*len += write(STDOUT_FILENO, "0", sizeof(char));
+		return ;
+	}
+	if (!ptr && ptr != 0)
 	{
 		*len += ft_putstr(NULL_PTR);
 		return ;
 	}
-	if (ft_strncmp(base, HEX_LW, ft_strlen(base)) == 0)
+	if (ft_strncmp(base, HEX_LW, ft_strlen(base)) == 0 && ptr != 0)
 		*len += ft_putstr(HEX_L_PREFIX);
-	else
+	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
-
 	if (ptr < (size_t)nbase)
 	{
 		*len += ft_putchar(base[ptr]);

@@ -30,6 +30,9 @@
 # define HEX_U_PREFIX "0X"
 # define OCT_PREFIX "0"
 
+# define LONG_MAX_ 9223372036854775807
+# define LONG_MIN_ -9223372036854775808
+
 /* structs */
 
 typedef struct s_elements

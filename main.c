@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include <stdio.h>
 //#include "../ft_printf/includes/ft_printf.h"
 #include "./includes/ft_printf_bonus.h"
@@ -20,9 +21,9 @@ int	main(void)
 	int	stdio;
 //	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
-	ft = ft_printf(" %#x ", -1);	
+	ft = ft_printf(" %#x ", LONG_MIN);	
 	printf("X\n___printf: ");
-	stdio = printf(" %#x ", -1);
+	stdio = printf(" %#x ", LONG_MIN);
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else
