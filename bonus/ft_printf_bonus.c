@@ -13,7 +13,8 @@
 #include "../includes/ft_printf_bonus.h"
 
 static void	get_0x25(const char *fmt, int *len, va_list ap);
-static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt);
+static void	verify_flags(int *len, va_list ap, t_element *info,
+				const char *fmt);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -33,8 +34,6 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 {
 	t_element	*info;
 
-	if (!fmt)
-		return ;
 	info = malloc(sizeof(t_element));
 	while (*fmt != '\0')
 	{

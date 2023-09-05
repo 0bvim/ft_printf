@@ -42,7 +42,7 @@ void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
 	}
 }
 
-void	ft_put_pointer(large_int ptr, int *len, char *base, int nbase)
+void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 {
 	if (ptr > LONG_MAX_)
 	{
