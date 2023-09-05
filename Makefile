@@ -43,7 +43,7 @@ fclean: clean
 cleanbonus: 
 	$(RM) $(BOBJ)
 
-fcleanbonus: cleanbonus
+fcleanbonus: cleanbonus fclean
 
 rebonus: fcleanbonus bonus 
 

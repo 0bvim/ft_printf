@@ -18,11 +18,11 @@ int	main(void)
 {
 	int	ft;
 	int	stdio;
-	void	*ptr = (void *)1;
+//	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
-	ft = ft_printf("%s %d %c %i %u %x %X %% %p %#X", "bombastic", 10, 'Y', 20, 1123, 921, -16774184, ptr, 134);
+	ft = ft_printf(" %#x ", -1);	
 	printf("X\n___printf: ");
-	stdio = printf("%s %d %c %i %u %x %X %% %p %#X", "bombastic", 10, 'Y', 20, 1123, 921, -16774184, ptr, 134);
+	stdio = printf(" %#x ", -1);
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else
