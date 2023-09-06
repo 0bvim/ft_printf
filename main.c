@@ -21,9 +21,9 @@ int	main(void)
 	int	stdio;
 //	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
-	ft = ft_printf(" %#x ", LONG_MAX);	
+	ft = ft_printf(" %#x ", 0);	
 	printf("X\n___printf: ");
-	stdio = printf(" %#x ", LONG_MAX);
+	stdio = printf(" %#x ", 0);
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else
