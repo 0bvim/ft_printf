@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 07:52:32 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/04 13:31:47 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/08 18:43:10 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ int	is_digit(int c)
 	return (c >= 0x30 && c <= 0x39);
 }
 
+int	ft_isflag(t_element *info, const char *fmt)
+{
+	info->flags = 1;
+	fmt++;
+	return (1);
+	/* need to create this function */
+}
+
 size_t	ft_strlen(char *str)
 {
 	size_t	len;
@@ -33,14 +41,6 @@ size_t	ft_strlen(char *str)
 	while (str[len] != '\0')
 		len++;
 	return (len);
-}
-
-int	ft_is_bonus(char f)
-{
-	if (f == 0x23 || f == 0x2B || f == 0x2D || f == 0x2E || f == 0x30
-		|| f == 0x20)
-		return (1);
-	return (0);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
