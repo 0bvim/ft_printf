@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:27:09 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/04 13:20:43 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:08:44 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,4 @@ void	print_var(t_element *info, va_list ap, int *len)
 	}
 	else if (info->type == 0x70)
 		ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
-}
-
-void	print_bonus(t_element *info, va_list ap, int *len, const char *fmt)
-{
-	if (info->type == '#')
-	{
-		if (*fmt == 'x')
-			ft_put_pointer(va_arg(ap, long int), len, HEX_LW, 16);
-		else
-			ft_put_pointer(va_arg(ap, long int), len, HEX_UP, 16);
-	}
 }

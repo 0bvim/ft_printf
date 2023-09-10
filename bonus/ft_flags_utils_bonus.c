@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 07:52:32 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/08 18:43:10 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:14:05 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ int	is_digit(int c)
 	return (c >= 0x30 && c <= 0x39);
 }
 
-int	ft_isflag(t_element *info, const char *fmt)
+int	ft_isflag(char f)
 {
-	info->flags = 1;
-	fmt++;
-	return (1);
-	/* need to create this function */
+	if (f == '-' || f == '0' || f == '+' || f == ' ' || f == '#')
+		return (1);
+	return (0);
 }
 
 size_t	ft_strlen(char *str)

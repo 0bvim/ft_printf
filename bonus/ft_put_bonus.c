@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/04 13:39:34 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:34:35 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,6 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 		return (write (STDOUT_FILENO, NULL_STR, ft_strlen(NULL_STR)));
 	return (write (STDOUT_FILENO, str, ft_strlen(str)));
-}
-
-void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
-{
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		*len += write(STDOUT_FILENO, "-", sizeof(char));
-	}
-	if (nbr < nbase)
-	{
-		*len += ft_putchar(base[nbr]);
-	}
-	else
-	{
-		ft_putnbr_base(nbr / nbase, len, base, nbase);
-		ft_putnbr_base(nbr % nbase, len, base, nbase);
-	}
 }
 
 void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
@@ -67,4 +49,18 @@ void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 		ft_putnbr_base(ptr / nbase, len, base, nbase);
 		ft_putnbr_base(ptr % nbase, len, base, nbase);
 	}
+}
+
+unsigned char	ft_get_flags(char c)
+{
+	if (c == '-')
+		return (MINUS);
+	else if (c == '0')
+		return (ZERO);
+	else if (c == '+')
+		return (PLUS);
+	else if (c == ' ')
+		return (SPACE);
+	else
+		return (HASH);
 }

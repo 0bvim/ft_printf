@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/08 18:42:54 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:29:21 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			info->type = *fmt;
 			verify_flags(len, ap, info, fmt);
 			fmt++;
-			if (ft_isflag(info, fmt))
-				fmt++;
 		}
 		else if (fmt)
 		{
@@ -60,17 +58,11 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 
 static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 {
-	if (ft_istype(info->type))
+	len += 1;
+	while (!ft_istype(info->type))
 	{
-		print_var(info, ap, len);
+		if (ft_isflag(*fmt))
+			info->flags |= ft_get_flags(*(fmt)++);
 	}
-	else if (ft_isflag(info, fmt))
-	{
-		if (info->type == '#')
-		{
-			fmt++;
-			print_bonus(info, ap, len, fmt);
-			fmt++;
-		}
-	}
+	print_var(info, ap, len);
 }

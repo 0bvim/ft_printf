@@ -6,7 +6,7 @@
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/09/08 10:37:07 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/09/09 22:05:45 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBS		=	-lft
 INCLUDES	=	-I ./includes
 CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES)
 FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
-FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c ft_flags_utils_bonus.c
+FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c ft_flags_utils_bonus.c ft_putnbr_base_bonus.c
 SRCS		=	$(addprefix sources/, $(FILES))
 BSRCS		=	$(addprefix bonus/, $(FILESB))
 OBJS		=	$(SRCS:.c=.o)

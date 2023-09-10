@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/08 18:42:20 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:22:55 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@
 /* masks to try bitmask/wise operators */
 # define MINUS 0b000001
 # define ZERO 0b000010
-# define HASH 0b000100
-# define SPACE 0b001000
 # define PLUS 0b010000
+# define SPACE 0b001000
+# define HASH 0b000100
 
 /* my types */
 typedef unsigned long long int	t_large;
@@ -61,10 +61,10 @@ int					ft_printf(const char *form, ...);
 size_t				ft_strlen(char *str);
 int					ft_istype(char c);
 int					is_digit(int c);
-int					ft_isflag(t_element *info,
-						const char *fmt);
+int					ft_isflag(char f);
 int					ft_strncmp(const char *s1,
 						const char *s2, size_t n);
+unsigned char				ft_get_flags(char c);
 
 /* print functions */
 void				print_var(t_element *info, va_list ap, int *len);
