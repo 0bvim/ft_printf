@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/08/30 01:47:00 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/10 22:45:48 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ static void	verify_flags(int *len, va_list ap, t_element *info)
 	if (ft_istype(info->type))
 	{
 		print_var(info, ap, len);
+	}
+	else
+	{
+		*len = -1;
+		return ((void)(-1));
 	}
 }

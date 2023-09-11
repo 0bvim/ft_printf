@@ -55,6 +55,7 @@ fclean	Makefile	/^fclean: clean$/;"	t
 fcleanbonus	Makefile	/^fcleanbonus: cleanbonus fclean$/;"	t
 flags	includes/ft_printf.h	/^	unsigned char	flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
 flags	includes/ft_printf_bonus.h	/^	unsigned char	flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
+ft_get_flags	bonus/ft_put_bonus.c	/^unsigned char	ft_get_flags(char c)$/;"	f	typeref:typename:unsigned char
 ft_isflag	bonus/ft_flags_utils_bonus.c	/^int	ft_isflag(char f)$/;"	f	typeref:typename:int
 ft_istype	bonus/ft_flags_utils_bonus.c	/^int	ft_istype(char c)$/;"	f	typeref:typename:int
 ft_istype	sources/ft_flags_utils.c	/^int	ft_istype(char c)$/;"	f	typeref:typename:int
@@ -74,7 +75,6 @@ ft_strlen	sources/ft_flags_utils.c	/^size_t	ft_strlen(char *str)$/;"	f	typeref:t
 ft_strncmp	bonus/ft_flags_utils_bonus.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
 get_0x25	bonus/ft_printf_bonus.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
 get_0x25	sources/ft_printf.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
-get_flags	bonus/ft_put_bonus.c	/^unsigned char	get_flags(char c)$/;"	f	typeref:typename:unsigned char
 is_digit	bonus/ft_flags_utils_bonus.c	/^int	is_digit(int c)$/;"	f	typeref:typename:int
 is_digit	sources/ft_flags_utils.c	/^int	is_digit(int c)$/;"	f	typeref:typename:int
 main	main.c	/^int	main(void)$/;"	f	typeref:typename:int
