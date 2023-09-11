@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:44:30 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 14:51:24 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:03:19 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_atoi(const char *fmt)
 	int	number;
 
 	number = 0;
-	while (ft_isdigit(*fmt))
-	{
+	while (is_digitb(*fmt))
 		number = (number * 10) + (*(fmt)++ - '0');
-	}
 	return (number);
 }

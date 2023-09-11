@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 14:58:01 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:59:41 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 	{
 		if (ft_isflagb(*fmt))
 			info->flags |= ft_get_flags(*(fmt)++);
-		else if (ft_isdigit(*fmt))
-			element->width = ft_atoi(fmt);
+		else if (is_digitb(*fmt))
+			info->width = ft_atoi(fmt);
 	}
 	info->type = *fmt;
 	print_var(info, ap, len);
