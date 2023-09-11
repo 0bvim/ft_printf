@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 11:44:36 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:59:18 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # define OCT_PREFIX "0"
 
 # define LONG_MAX_ 9223372036854775807
-# define LONG_MIN_ 9223372036854775808
+# define LONG_MIN_ -9223372036854775808
 # define UINT_MAX_ 4294967295
 
 /* masks to try bitmask/wise operators */
@@ -64,6 +64,7 @@ int								is_digitb(int c);
 int								ft_isflagb(char f);
 int								ft_strncmp(const char *s1, const char *s2,
 									size_t n);
+int								ft_atoi(const char *fmt);
 
 /* print functions */
 void							print_var(t_element *info, va_list ap,
