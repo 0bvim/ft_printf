@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 11:40:59 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:58:01 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			info->flags = 0;
 			info->width = 0;
 			info->precision = 0;
-			info->type = *fmt;
 			verify_flags(len, ap, info, fmt);
 			fmt++;
 		}
@@ -58,10 +57,13 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 
 static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 {
-	while (!ft_istypeb(info->type))
+	while (!ft_istypeb(*fmt))
 	{
 		if (ft_isflagb(*fmt))
 			info->flags |= ft_get_flags(*(fmt)++);
+		else if (ft_isdigit(*fmt))
+			element->width = ft_atoi(fmt);
 	}
+	info->type = *fmt;
 	print_var(info, ap, len);
 }

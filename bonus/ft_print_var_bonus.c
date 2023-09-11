@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:27:09 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/09 22:08:44 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:14:08 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	print_var(t_element *info, va_list ap, int *len)
 	}
 	else if (info->type == 0x78 || info->type == 0x58)
 	{
-		if (info->type == 0x78)
+		if (info->type == 0x78 && info->flags != HASH)
 			ft_putnbr_base(va_arg(ap, unsigned int), len, HEX_LW, 16);
 		else
 			ft_putnbr_base(va_arg(ap, unsigned int), len, HEX_UP, 16);
 	}
-	else if (info->type == 0x70)
+	else if (info->type == 0x70 || info->flags == HASH)
 		ft_put_pointer(va_arg(ap, size_t), len, HEX_LW, 16);
 }
