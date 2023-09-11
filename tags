@@ -28,6 +28,7 @@ HEX_U_PREFIX	includes/ft_printf.h	/^# define HEX_U_PREFIX /;"	d
 HEX_U_PREFIX	includes/ft_printf_bonus.h	/^# define HEX_U_PREFIX /;"	d
 INCLUDES	Makefile	/^INCLUDES	=	-I .\/includes$/;"	m
 LIBS	Makefile	/^LIBS		=	-lft$/;"	m
+LLONG_MAX_	includes/ft_printf_bonus.h	/^# define LLONG_MAX_ /;"	d
 LONG_MAX_	includes/ft_printf_bonus.h	/^# define LONG_MAX_ /;"	d
 LONG_MIN_	includes/ft_printf_bonus.h	/^# define LONG_MIN_ /;"	d
 MINUS	includes/ft_printf_bonus.h	/^# define MINUS /;"	d
@@ -44,7 +45,6 @@ OCT_PREFIX	includes/ft_printf_bonus.h	/^# define OCT_PREFIX /;"	d
 PLUS	includes/ft_printf_bonus.h	/^# define PLUS /;"	d
 SPACE	includes/ft_printf_bonus.h	/^# define SPACE /;"	d
 SRCS	Makefile	/^SRCS		=	$(addprefix sources\/, $(FILES))$/;"	m
-UINT_MAX_	includes/ft_printf_bonus.h	/^# define UINT_MAX_ /;"	d
 ZERO	includes/ft_printf_bonus.h	/^# define ZERO /;"	d
 all	Makefile	/^all: $(NAME)$/;"	t
 bonus	Makefile	/^bonus: $(BOBJ)$/;"	t
@@ -54,6 +54,7 @@ fclean	Makefile	/^fclean: clean$/;"	t
 fcleanbonus	Makefile	/^fcleanbonus: cleanbonus fclean$/;"	t
 flags	includes/ft_printf.h	/^	unsigned char	flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
 flags	includes/ft_printf_bonus.h	/^	unsigned char				flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
+ft_atoi	bonus/ft_atoi_bonus.c	/^int	ft_atoi(const char *fmt)$/;"	f	typeref:typename:int
 ft_get_flags	bonus/ft_put_bonus.c	/^unsigned char	ft_get_flags(char c)$/;"	f	typeref:typename:unsigned char
 ft_isflagb	bonus/ft_flags_utils_bonus.c	/^int	ft_isflagb(char f)$/;"	f	typeref:typename:int
 ft_istype	sources/ft_flags_utils.c	/^int	ft_istype(char c)$/;"	f	typeref:typename:int
