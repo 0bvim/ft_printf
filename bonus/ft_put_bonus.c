@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 16:52:15 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:59:49 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ int	ft_putstr(char *str)
 
 void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 {
-	if (ptr - 1 > LONG_MAX_)
-	{
-		*len += write(STDOUT_FILENO, "0", sizeof(char));
-		return ;
-	}
-	if (!ptr && ptr != 0)
+	if (ptr == 0)
 	{
 		*len += ft_putstr(NULL_PTR);
 		return ;
+	}
+	if (ptr - 1 > LONG_MAX_)
+	{
+		if (ptr != LLONG_MAX_)
+		{
+			*len += write(STDOUT_FILENO, "0", sizeof(char));
+			return ;
+		}
 	}
 	if (ft_strncmp(base, HEX_LW, ft_strlenb(base)) == 0 && ptr != 0)
 		*len += ft_putstr(HEX_L_PREFIX);
