@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/10 22:54:10 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:44:36 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int								ft_printf(const char *form, ...);
 
 /* flag and aux functions */
 unsigned char					ft_get_flags(char c);
-size_t							ft_strlen(char *str);
-int								ft_istype(char c);
-int								is_digit(int c);
-int								ft_isflag(char f);
+size_t							ft_strlenb(char *str);
+int								ft_istypeb(char c);
+int								is_digitb(int c);
+int								ft_isflagb(char f);
 int								ft_strncmp(const char *s1, const char *s2,
 									size_t n);
 

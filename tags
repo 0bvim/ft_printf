@@ -44,7 +44,6 @@ OCT_PREFIX	includes/ft_printf_bonus.h	/^# define OCT_PREFIX /;"	d
 PLUS	includes/ft_printf_bonus.h	/^# define PLUS /;"	d
 SPACE	includes/ft_printf_bonus.h	/^# define SPACE /;"	d
 SRCS	Makefile	/^SRCS		=	$(addprefix sources\/, $(FILES))$/;"	m
-TRUE	includes/ft_printf_bonus.h	/^# define TRUE /;"	d
 UINT_MAX_	includes/ft_printf_bonus.h	/^# define UINT_MAX_ /;"	d
 ZERO	includes/ft_printf_bonus.h	/^# define ZERO /;"	d
 all	Makefile	/^all: $(NAME)$/;"	t
@@ -54,11 +53,11 @@ cleanbonus	Makefile	/^cleanbonus: $/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 fcleanbonus	Makefile	/^fcleanbonus: cleanbonus fclean$/;"	t
 flags	includes/ft_printf.h	/^	unsigned char	flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
-flags	includes/ft_printf_bonus.h	/^	unsigned char	flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
+flags	includes/ft_printf_bonus.h	/^	unsigned char				flags;$/;"	m	struct:s_elements	typeref:typename:unsigned char
 ft_get_flags	bonus/ft_put_bonus.c	/^unsigned char	ft_get_flags(char c)$/;"	f	typeref:typename:unsigned char
-ft_isflag	bonus/ft_flags_utils_bonus.c	/^int	ft_isflag(char f)$/;"	f	typeref:typename:int
-ft_istype	bonus/ft_flags_utils_bonus.c	/^int	ft_istype(char c)$/;"	f	typeref:typename:int
+ft_isflagb	bonus/ft_flags_utils_bonus.c	/^int	ft_isflagb(char f)$/;"	f	typeref:typename:int
 ft_istype	sources/ft_flags_utils.c	/^int	ft_istype(char c)$/;"	f	typeref:typename:int
+ft_istypeb	bonus/ft_flags_utils_bonus.c	/^int	ft_istypeb(char c)$/;"	f	typeref:typename:int
 ft_printf	README.md	/^# ft_printf$/;"	c
 ft_printf	bonus/ft_printf_bonus.c	/^int	ft_printf(const char *fmt, ...)$/;"	f	typeref:typename:int
 ft_printf	sources/ft_printf.c	/^int	ft_printf(const char *fmt, ...)$/;"	f	typeref:typename:int
@@ -70,17 +69,16 @@ ft_putnbr_base	bonus/ft_putnbr_base_bonus.c	/^void	ft_putnbr_base(long nbr, int 
 ft_putnbr_base	sources/ft_put.c	/^void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putstr	bonus/ft_put_bonus.c	/^int	ft_putstr(char *str)$/;"	f	typeref:typename:int
 ft_putstr	sources/ft_put.c	/^int	ft_putstr(char *str)$/;"	f	typeref:typename:int
-ft_strlen	bonus/ft_flags_utils_bonus.c	/^size_t	ft_strlen(char *str)$/;"	f	typeref:typename:size_t
 ft_strlen	sources/ft_flags_utils.c	/^size_t	ft_strlen(char *str)$/;"	f	typeref:typename:size_t
+ft_strlenb	bonus/ft_flags_utils_bonus.c	/^size_t	ft_strlenb(char *str)$/;"	f	typeref:typename:size_t
 ft_strncmp	bonus/ft_flags_utils_bonus.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
 get_0x25	bonus/ft_printf_bonus.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
 get_0x25	sources/ft_printf.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
-is_digit	bonus/ft_flags_utils_bonus.c	/^int	is_digit(int c)$/;"	f	typeref:typename:int
 is_digit	sources/ft_flags_utils.c	/^int	is_digit(int c)$/;"	f	typeref:typename:int
+is_digitb	bonus/ft_flags_utils_bonus.c	/^int	is_digitb(int c)$/;"	f	typeref:typename:int
 main	main.c	/^int	main(void)$/;"	f	typeref:typename:int
-main	mainprintf.c	/^int	main(void)$/;"	f	typeref:typename:int
 precision	includes/ft_printf.h	/^	int				precision;$/;"	m	struct:s_elements	typeref:typename:int
-precision	includes/ft_printf_bonus.h	/^	int				precision;$/;"	m	struct:s_elements	typeref:typename:int
+precision	includes/ft_printf_bonus.h	/^	int							precision;$/;"	m	struct:s_elements	typeref:typename:int
 print_var	bonus/ft_print_var_bonus.c	/^void	print_var(t_element *info, va_list ap, int *len)$/;"	f	typeref:typename:void
 print_var	sources/ft_print_var.c	/^void	print_var(t_element *info, va_list ap, int *len)$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
@@ -88,11 +86,11 @@ rebonus	Makefile	/^rebonus: fcleanbonus bonus $/;"	t
 s_elements	includes/ft_printf.h	/^typedef struct s_elements$/;"	s
 s_elements	includes/ft_printf_bonus.h	/^typedef struct s_elements$/;"	s
 t_element	includes/ft_printf.h	/^}					t_element;$/;"	t	typeref:struct:s_elements
-t_element	includes/ft_printf_bonus.h	/^}					t_element;$/;"	t	typeref:struct:s_elements
+t_element	includes/ft_printf_bonus.h	/^}								t_element;$/;"	t	typeref:struct:s_elements
 t_large	includes/ft_printf_bonus.h	/^typedef unsigned long long int	t_large;$/;"	t	typeref:typename:unsigned long long int
 type	includes/ft_printf.h	/^	char			type;$/;"	m	struct:s_elements	typeref:typename:char
-type	includes/ft_printf_bonus.h	/^	char			type;$/;"	m	struct:s_elements	typeref:typename:char
+type	includes/ft_printf_bonus.h	/^	char						type;$/;"	m	struct:s_elements	typeref:typename:char
 verify_flags	bonus/ft_printf_bonus.c	/^static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)$/;"	f	typeref:typename:void	file:
 verify_flags	sources/ft_printf.c	/^static void	verify_flags(int *len, va_list ap, t_element *info)$/;"	f	typeref:typename:void	file:
 width	includes/ft_printf.h	/^	int				width;$/;"	m	struct:s_elements	typeref:typename:int
-width	includes/ft_printf_bonus.h	/^	int				width;$/;"	m	struct:s_elements	typeref:typename:int
+width	includes/ft_printf_bonus.h	/^	int							width;$/;"	m	struct:s_elements	typeref:typename:int

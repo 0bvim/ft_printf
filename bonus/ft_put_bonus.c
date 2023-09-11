@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/09 22:34:35 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:45:03 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_putchar(char c)
 int	ft_putstr(char *str)
 {
 	if (str == NULL)
-		return (write (STDOUT_FILENO, NULL_STR, ft_strlen(NULL_STR)));
-	return (write (STDOUT_FILENO, str, ft_strlen(str)));
+		return (write (STDOUT_FILENO, NULL_STR, ft_strlenb(NULL_STR)));
+	return (write (STDOUT_FILENO, str, ft_strlenb(str)));
 }
 
 void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
@@ -38,7 +38,7 @@ void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 	}
 	if (ptr == LONG_MAX_)
 		ptr = UINT_MAX_;
-	if (ft_strncmp(base, HEX_LW, ft_strlen(base)) == 0 && ptr != 0)
+	if (ft_strncmp(base, HEX_LW, ft_strlenb(base)) == 0 && ptr != 0)
 		*len += ft_putstr(HEX_L_PREFIX);
 	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
