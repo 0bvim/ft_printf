@@ -12,12 +12,16 @@ ft_istypeb	ft_flags_utils_bonus.c	/^int	ft_istypeb(char c)$/;"	f	typeref:typenam
 ft_printf	ft_printf_bonus.c	/^int	ft_printf(const char *fmt, ...)$/;"	f	typeref:typename:int
 ft_put_pointer	ft_put_bonus.c	/^void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putchar	ft_put_bonus.c	/^int	ft_putchar(char c)$/;"	f	typeref:typename:int
-ft_putnbr	numbers.c	/^void	ft_putnbr(int nbr, int *len, t_element *info)$/;"	f	typeref:typename:void
+ft_putnbr	numbers_bonus.c	/^void	ft_putnbr(int nbr, int *len, t_element *info)$/;"	f	typeref:typename:void
 ft_putnbr_base	ft_putnbr_base_bonus.c	/^void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putstr	ft_put_bonus.c	/^int	ft_putstr(char *str)$/;"	f	typeref:typename:int
 ft_strlenb	ft_flags_utils_bonus.c	/^size_t	ft_strlenb(char *str)$/;"	f	typeref:typename:size_t
 ft_strncmp	ft_flags_utils_bonus.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
 get_0x25	ft_printf_bonus.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
 is_digitb	ft_flags_utils_bonus.c	/^int	is_digitb(int c)$/;"	f	typeref:typename:int
+len_number	numbers_bonus.c	/^static int	len_number(int nbr, t_element *info)$/;"	f	typeref:typename:int	file:
+print_nbr	ft_put_bonus.c	/^void	print_nbr(char *str, int wlen, int *len, t_element *info)$/;"	f	typeref:typename:void
+print_spaces	ft_putnbr_base_bonus.c	/^void	print_spaces(int spaces, char c)$/;"	f	typeref:typename:void
 print_var	ft_print_var_bonus.c	/^void	print_var(t_element *info, va_list ap, int *len)$/;"	f	typeref:typename:void
+putnbr	numbers_bonus.c	/^static void	putnbr(long nbr, int len, char *str, t_element *info)$/;"	f	typeref:typename:void	file:
 verify_flags	ft_printf_bonus.c	/^static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)$/;"	f	typeref:typename:void	file:

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers.c                                          :+:      :+:    :+:   */
+/*   numbers_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:45:22 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/12 18:46:31 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:33:28 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
 
 static void	putnbr(long nbr, int len, char *str, t_element *info);
-static int	len_number(int nbr, t_element *info)
+static int	len_number(int nbr, t_element *info);
 
 void	ft_putnbr(int nbr, int *len, t_element *info)
 {
@@ -23,9 +23,9 @@ void	ft_putnbr(int nbr, int *len, t_element *info)
 	len_s = len_number(nbr, info);
 	str = malloc((len_s + 1) * sizeof(char));
 	if (str == NULL)
-		return (0);
-	putnbr(n, len, str, info);
-	//function to increment in len
+		return ;
+	putnbr(nbr, len_s, str, info);
+	print_nbr(str, len_s, len, info);
 	free(str);
 }
 

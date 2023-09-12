@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/12 08:58:38 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:23:05 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
 			info->width = ft_atoi((fmt)++);
 		else if (*fmt == '*')
 		{
-			*(fmt)++;
+			fmt++;
 			info->width = va_arg(ap, int);
 		}
 		else if (*(fmt)++ == '.')
 		{
 			if (*fmt == '*')
 			{
-				*(fmt)++;
+				fmt++;
 				info->precision = va_arg(ap, int);
 			}
 			else
