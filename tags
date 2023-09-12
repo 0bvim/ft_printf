@@ -66,6 +66,7 @@ ft_put_pointer	bonus/ft_put_bonus.c	/^void	ft_put_pointer(t_large ptr, int *len,
 ft_put_pointer	sources/ft_put.c	/^void	ft_put_pointer(size_t ptr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putchar	bonus/ft_put_bonus.c	/^int	ft_putchar(char c)$/;"	f	typeref:typename:int
 ft_putchar	sources/ft_put.c	/^int	ft_putchar(char c)$/;"	f	typeref:typename:int
+ft_putnbr	bonus/numbers.c	/^void	ft_putnbr(int nbr, int *len, t_element *info)$/;"	f	typeref:typename:void
 ft_putnbr_base	bonus/ft_putnbr_base_bonus.c	/^void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putnbr_base	sources/ft_put.c	/^void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
 ft_putstr	bonus/ft_put_bonus.c	/^int	ft_putstr(char *str)$/;"	f	typeref:typename:int

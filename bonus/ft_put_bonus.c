@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 17:59:49 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:07:21 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,27 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 		return (write (STDOUT_FILENO, NULL_STR, ft_strlenb(NULL_STR)));
 	return (write (STDOUT_FILENO, str, ft_strlenb(str)));
+}
+
+void	print_nbr(char *str, int wlen, int *len, t_element *info)
+{
+	int	spaces;
+
+	spaces = info->width - wlen;
+	if (spaces > 0)
+	{
+		if (!(info->flags & MINUS))
+			ft_print_spaces(spaces, ' ', len);
+		while (*str != '\0')
+			*len += write(1, str++, 1);
+		if (info->flags & MINUS)
+			ft_print_spaces(spaces, ' ', len);
+		return (void *)(*len += info->width);
+		
+	}
+	while (*str != '\0')
+		write (1, str++, 1);
+	return (void *)(*len += wlen);
 }
 
 void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)

@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+ft_atoi	ft_atoi_bonus.c	/^int	ft_atoi(const char *fmt)$/;"	f	typeref:typename:int
+ft_get_flags	ft_put_bonus.c	/^unsigned char	ft_get_flags(char c)$/;"	f	typeref:typename:unsigned char
+ft_isflagb	ft_flags_utils_bonus.c	/^int	ft_isflagb(char f)$/;"	f	typeref:typename:int
+ft_istypeb	ft_flags_utils_bonus.c	/^int	ft_istypeb(char c)$/;"	f	typeref:typename:int
+ft_printf	ft_printf_bonus.c	/^int	ft_printf(const char *fmt, ...)$/;"	f	typeref:typename:int
+ft_put_pointer	ft_put_bonus.c	/^void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
+ft_putchar	ft_put_bonus.c	/^int	ft_putchar(char c)$/;"	f	typeref:typename:int
+ft_putnbr	numbers.c	/^void	ft_putnbr(int nbr, int *len, t_element *info)$/;"	f	typeref:typename:void
+ft_putnbr_base	ft_putnbr_base_bonus.c	/^void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)$/;"	f	typeref:typename:void
+ft_putstr	ft_put_bonus.c	/^int	ft_putstr(char *str)$/;"	f	typeref:typename:int
+ft_strlenb	ft_flags_utils_bonus.c	/^size_t	ft_strlenb(char *str)$/;"	f	typeref:typename:size_t
+ft_strncmp	ft_flags_utils_bonus.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+get_0x25	ft_printf_bonus.c	/^static void	get_0x25(const char *fmt, int *len, va_list ap)$/;"	f	typeref:typename:void	file:
+is_digitb	ft_flags_utils_bonus.c	/^int	is_digitb(int c)$/;"	f	typeref:typename:int
+print_var	ft_print_var_bonus.c	/^void	print_var(t_element *info, va_list ap, int *len)$/;"	f	typeref:typename:void
+verify_flags	ft_printf_bonus.c	/^static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)$/;"	f	typeref:typename:void	file:

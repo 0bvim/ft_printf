@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 22:07:04 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/09 22:07:37 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:13:33 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)
 		ft_putnbr_base(nbr / nbase, len, base, nbase);
 		ft_putnbr_base(nbr % nbase, len, base, nbase);
 	}
+}
+
+void	print_spaces(int spaces, char c)
+{
+	while (spaces--)
+		write(1, &c, 1);
 }
