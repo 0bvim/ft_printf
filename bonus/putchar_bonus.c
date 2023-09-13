@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putchar.c                                          :+:      :+:    :+:   */
+/*   putchar_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:36:44 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:43:39 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:10:59 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,4 @@ void	print_spaces(int spaces, char c)
 {
 	while (spaces--)
 		write(1, &c, 1);
-}
-
-int	ft_putchar(char c)
-{
-	return (write(STDOUT_FILENO, &c, sizeof(char)));
 }

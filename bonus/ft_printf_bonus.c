@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 09:02:45 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:34:07 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ static void	verify_flags(int *len, va_list ap, t_element *info, const char **fmt
 		}
 	}
 	info->type = *(*fmt)++;
-	print_var(info, ap, len);
+	print_varb(info, ap, len);
 }

@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:45:22 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:43:43 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:37:16 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	putnbr(long nbr, int len, char *str, t_element *info);
 static int	len_number(int nbr, t_element *info);
 
-void	ft_putnbr(int nbr, int *len, t_element *info)
+void	ft_putnbrb(int nbr, int *len, t_element *info)
 {
 	int	len_s;
 	char	*str;

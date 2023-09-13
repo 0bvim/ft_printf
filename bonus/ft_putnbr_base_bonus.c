@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 22:07:04 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 17:07:07 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:13:16 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	len_base_nbr(size_t nbr, int base_len, t_element *info);
 static char	*putnbr_base(size_t nb, int len, char *base, t_element *info);
 static void	find_prefix(char *str, int *min, t_element *info);
 
-void	ft_putnbr_base(unsigned long nbr, int *len, char *base, t_element *info)
+void	ft_putnbr_baseb(unsigned long nbr, int *len, char *base, t_element *info)
 {
 	int	base_len;
 	int	lenght;
