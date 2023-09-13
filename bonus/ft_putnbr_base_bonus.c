@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 22:07:04 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 17:13:16 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:13:22 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static void	find_prefix(char *str, int *min, t_element *info)
 {
 	++*min;
 	if (info->type == 'x' || info->type == 'p')
-		ft_strcpy(str, HEX_LW, ++(*min));
+		ft_strcpy(str, HEX_L_PREFIX, ++(*min));
 	if (info->type == 'X')
-		ft_strcpy(str, HEX_UP, ++(*min));
+		ft_strcpy(str, HEX_U_PREFIX, ++(*min));
 }
 
 static int	len_base_nbr(size_t nbr, int base_len, t_element *info)
@@ -71,7 +71,7 @@ static int	len_base_nbr(size_t nbr, int base_len, t_element *info)
 		return (0);
 	pre_len = 0;
 	if ((info->flags & HASH) && nbr != 0)
-		pre_len += 1 + (info->type);
+		pre_len += 2 * (info->type != 'o');
 	len = 0;
 	if (nbr == 0)
 		len++;

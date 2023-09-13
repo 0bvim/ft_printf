@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 19:13:40 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:04:11 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,14 @@ unsigned char	ft_get_flags(char c)
 		return (HASH);
 }
 
-void	ft_put_pointerb(const void *ptr, t_element *info, int *len)
+void	ft_put_pointerb(void *ptr, t_element *info, int *len)
 {
 	if (ptr == NULL)
 	{
 		info->precision = -1;
 		*len += ft_putstrb(NULL_PTR, info);
+		return ;
 	}
 	info->flags |= HASH;
-	*len += ft_putnbr_base_bonus((unsigned long)ptr, len, HEX_LW, info);
+	ft_putnbr_baseb((unsigned long)ptr, len, HEX_LW, info);
 }
