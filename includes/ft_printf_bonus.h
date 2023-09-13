@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:27:28 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:50:02 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ void							print_var(t_element *info, va_list ap,
 int								ft_putstr(char *str);
 int								ft_putchar(char c);
 int								ft_putcharb(char c, t_element *info);
-void							ft_putnbr_base(long nbr, int *len, char *base,
-									int nbase);
+void								ft_putnbr_base(unsigned long nbr, int *len,
+									char *base, t_element *info);
 void							ft_put_pointer(t_large ptr, int *len,
-									char *base, int nbase);
+									char *base, t_element *info);
 void							print_bonus(t_element *info, va_list ap,
 									int *len, const char *fmt);
 void							print_nbr(char *str, int wlen, int *len,

@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:56:02 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:50:27 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	print_nbr(char *str, int wlen, int *len, t_element *info)
 	return ;
 }
 
-void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
+void	ft_put_pointer(t_large ptr, int *len, char *base, t_element *info)
 {
 	if (ptr == 0)
 	{
@@ -54,12 +54,12 @@ void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 		*len += ft_putstr(HEX_L_PREFIX);
 	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
-	if (ptr < (size_t)nbase)
+	if (ptr < (size_t)ft_strlenb(base))
 		*len += ft_putchar(base[ptr]);
 	else
 	{
-		ft_putnbr_base(ptr / nbase, len, base, nbase);
-		ft_putnbr_base(ptr % nbase, len, base, nbase);
+		ft_putnbr_base((ptr / ft_strlenb(base)), len, base, info);
+		ft_putnbr_base((ptr % ft_strlenb(base)), len, base, info);
 	}
 }
 
