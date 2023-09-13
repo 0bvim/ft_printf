@@ -6,7 +6,7 @@
 /*   By: vde-frei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 02:33:48 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 09:20:50 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:06:34 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(void)
 	int	a = 8;
 //	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
-	ft = ft_printf(" %*.*d ", a, 5, 0);
+	ft = ft_printf(" %-2c ",  '0');
 	printf("X\n___printf: ");
-	stdio = printf(" %*.*d ", a, 5, 0);
+	stdio = printf(" %-2c ",  '0');
 	if (ft == stdio)
 		printf("X\nSame return values.");
 	else

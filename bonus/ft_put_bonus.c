@@ -6,14 +6,28 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 09:20:20 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:14:41 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(char c, t_element *info)
 {
+	int	spaces;
+
+	spaces = info->width - 1;
+	if (spaces > 0)
+	{
+		if (!(info->flags & MINUS))
+			print_spaces(spaces, ' ');
+		else if (info->flags & ZERO)
+			print_spaces(spaces, '0');
+		write(STDOUT_FILENO, &c, sizeof(char));
+		if (info->flags & MINUS)
+			print_spaces(spaces, ' ');
+		return (info->width);
+	}
 	return (write(STDOUT_FILENO, &c, sizeof(char)));
 }
 
@@ -37,7 +51,7 @@ void	print_nbr(char *str, int wlen, int *len, t_element *info)
 			*len += write(1, str++, 1);
 		if (info->flags & MINUS)
 			print_spaces(spaces, ' ');
-		*len += info->width - info->precision;
+		*len += spaces;
 		return ;
 		
 	}
@@ -67,7 +81,7 @@ void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
 	if (ptr < (size_t)nbase)
-		*len += ft_putchar(base[ptr]);
+		*len += ft_putstr(&base[ptr]);
 	else
 	{
 		ft_putnbr_base(ptr / nbase, len, base, nbase);
