@@ -6,13 +6,13 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:14:41 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:28:18 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
 
-int	ft_putchar(char c, t_element *info)
+int	ft_putcharb(char c, t_element *info)
 {
 	int	spaces;
 
@@ -81,7 +81,7 @@ void	ft_put_pointer(t_large ptr, int *len, char *base, int nbase)
 	else if (ptr != 0)
 		*len += ft_putstr(HEX_U_PREFIX);
 	if (ptr < (size_t)nbase)
-		*len += ft_putstr(&base[ptr]);
+		*len += ft_putchar(base[ptr]);
 	else
 	{
 		ft_putnbr_base(ptr / nbase, len, base, nbase);

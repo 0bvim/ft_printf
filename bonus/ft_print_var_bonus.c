@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:27:09 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:20:36 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:22:23 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	print_var(t_element *info, va_list ap, int *len)
 {
 	if (info->type == 0x63)
-		*len += ft_putchar(va_arg(ap, int), info);
+		*len += ft_putcharb(va_arg(ap, int), info);
 	else if (info->type == 0x25)
 		*len += write (STDOUT_FILENO, "%", sizeof(char));
 	else if (info->type == 0x73)
