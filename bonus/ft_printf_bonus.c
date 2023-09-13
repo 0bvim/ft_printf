@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 01:11:17 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 09:02:45 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	get_0x25(const char *fmt, int *len, va_list ap);
 static void	verify_flags(int *len, va_list ap, t_element *info,
-				const char *fmt);
+				const char **fmt);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -43,42 +43,38 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			info->flags = 0;
 			info->width = 0;
 			info->precision = -1;
-			verify_flags(len, ap, info, fmt);
-			fmt++;
+			verify_flags(len, ap, info, &fmt);
 		}
 		else if (fmt)
-		{
-			*len += write(STDOUT_FILENO, fmt, sizeof(char));
-			fmt++;
-		}
+			*len += write(STDOUT_FILENO, fmt++, sizeof(char));
 	}
 	free(info);
 }
 
-static void	verify_flags(int *len, va_list ap, t_element *info, const char *fmt)
+static void	verify_flags(int *len, va_list ap, t_element *info, const char **fmt)
 {
-	while (!ft_istypeb(*fmt))
+	while (!ft_istypeb(**fmt))
 	{
-		if (ft_isflagb(*fmt))
-			info->flags |= ft_get_flags(*(fmt)++);
-		else if (is_digitb(*fmt))
-			info->width = ft_atoi((fmt)++);
-		else if (*fmt == '*')
+		if (ft_isflagb(**fmt))
+			info->flags |= ft_get_flags(*(*fmt)++);
+		else if (is_digitb(**fmt))
+			info->width = ft_atoi(fmt);
+		else if (**fmt == '*')
 		{
-			fmt++;
+			(*fmt)++;
 			info->width = va_arg(ap, int);
 		}
-		else if (*(fmt)++ == '.')
+		else if (*(*fmt)++ == '.')
 		{
-			if (*fmt == '*')
+			if (**fmt == '*')
 			{
-				fmt++;
+				(*fmt)++;
 				info->precision = va_arg(ap, int);
 			}
 			else
 				info->precision = ft_atoi(fmt);
 		}
 	}
-	info->type = *fmt;
+	info->type = *(*fmt)++;
 	print_var(info, ap, len);
 }

@@ -6,7 +6,7 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/12 23:05:02 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 09:20:20 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_nbr(char *str, int wlen, int *len, t_element *info)
 			*len += write(1, str++, 1);
 		if (info->flags & MINUS)
 			print_spaces(spaces, ' ');
-		*len += info->width;
+		*len += info->width - info->precision;
 		return ;
 		
 	}

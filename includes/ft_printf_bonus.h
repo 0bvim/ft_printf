@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/12 19:22:20 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 08:51:37 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int								is_digitb(int c);
 int								ft_isflagb(char f);
 int								ft_strncmp(const char *s1, const char *s2,
 									size_t n);
-int								ft_atoi(const char *fmt);
+int								ft_atoi(const char **fmt);
 
 /* print functions */
 void							print_var(t_element *info, va_list ap,
