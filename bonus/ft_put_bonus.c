@@ -6,30 +6,11 @@
 /*   By: vde-frei vde-frei@student.42sp.org.br      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:26:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:28:18 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:44:36 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf_bonus.h"
-
-int	ft_putcharb(char c, t_element *info)
-{
-	int	spaces;
-
-	spaces = info->width - 1;
-	if (spaces > 0)
-	{
-		if (!(info->flags & MINUS))
-			print_spaces(spaces, ' ');
-		else if (info->flags & ZERO)
-			print_spaces(spaces, '0');
-		write(STDOUT_FILENO, &c, sizeof(char));
-		if (info->flags & MINUS)
-			print_spaces(spaces, ' ');
-		return (info->width);
-	}
-	return (write(STDOUT_FILENO, &c, sizeof(char)));
-}
 
 int	ft_putstr(char *str)
 {

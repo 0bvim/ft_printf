@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:45:22 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 11:32:27 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:43:43 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,4 @@ static int	len_number(int nbr, t_element *info)
 	if (info->precision == -1 && !(info->flags & MINUS) && (info->flags & ZERO) && info->width > len)
 		return (info->width);
 	return (len);
-}
-
-int	ft_putchar(char c)
-{
-	return (write(STDOUT_FILENO, &c, sizeof(char)));
 }
