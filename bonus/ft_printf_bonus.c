@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/12 19:23:05 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 01:11:17 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			fmt++;
 			info->flags = 0;
 			info->width = 0;
-			info->precision = 0;
+			info->precision = -1;
 			verify_flags(len, ap, info, fmt);
 			fmt++;
 		}
