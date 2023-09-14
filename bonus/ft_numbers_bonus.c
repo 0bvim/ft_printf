@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_numbers_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:45:22 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 21:14:52 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:35:31 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	len_number(int nbr, t_element *info)
 	int	len;
 	int	neg;
 
-	if (nbr == 0 & info->precision == 0)
+	if (nbr == 0 && info->precision == 0)
 		return (0);
 	len = 0;
 	neg = nbr < 0;

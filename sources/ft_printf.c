@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/11 00:07:42 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:22:39 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printf(const char *fmt, ...)
 
 	len = 0;
 	if (!fmt)
-		return (0);
+		return (-42);
 	va_start(ap, fmt);
 	get_0x25(fmt, &len, ap);
 	va_end(ap);
