@@ -51,7 +51,8 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 	free(info);
 }
 
-static void	verify_flags(int *len, va_list ap, t_element *info, const char **fmt)
+static void	verify_flags(int *len, va_list ap, t_element *info,
+		const char **fmt)
 {
 	while (!ft_istypeb(**fmt))
 	{

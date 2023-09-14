@@ -10,25 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./includes/ft_printf_bonus.h"
 #include <limits.h>
 #include <stdio.h>
-#include "./includes/ft_printf_bonus.h"
 
 int	main(void)
 {
 	int	ft;
 	int	stdio;
-	int	a = 8;
-//	void	*ptr = (void *)1;
+	int	a;
+
+	a = 8;
+	//	void	*ptr = (void *)1;
 	ft_printf("ft_printf: ");
 	ft = ft_printf(" % d ", 0);
 	printf("X\n___printf: ");
 	stdio = printf(" % d ", 0);
 	if (ft == stdio)
-		printf("X\nSame return values.");
+		printf("X\nSame return (values."));
 	else
 	{
-		printf("X\ndifference in return values.\n");
+		printf("X\ndifference in return (values.\n"));
 		printf("returned: %d\noriginal: %d\n", ft, stdio);
 	}
 	return (0);

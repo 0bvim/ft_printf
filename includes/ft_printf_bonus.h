@@ -65,16 +65,17 @@ int								ft_isflagb(char f);
 int								ft_strncmp(const char *s1, const char *s2,
 									size_t n);
 int								ft_atoi(const char **fmt);
-void								ft_strcpy(char *dest, char *source, int len);
+void							ft_strcpy(char *dest, char *source, int len);
 
 /* print functions */
 void							print_varb(t_element *info, va_list ap,
 									int *len);
 int								ft_putstrb(char *str, t_element *info);
 int								ft_putcharb(char c, t_element *info);
-void								ft_putnbr_baseb(unsigned long nbr, int *len,
+void							ft_putnbr_baseb(unsigned long nbr, int *len,
 									char *base, t_element *info);
-void							ft_put_pointerb(void *ptr, t_element *info, int *len);
+void							ft_put_pointerb(void *ptr, t_element *info,
+									int *len);
 void							print_bonus(t_element *info, va_list ap,
 									int *len, const char *fmt);
 void							print_nbr(char *str, int wlen, int *len,

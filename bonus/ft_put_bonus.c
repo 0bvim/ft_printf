@@ -27,10 +27,9 @@ void	print_nbr(char *str, int wlen, int *len, t_element *info)
 			print_spaces(spaces, ' ');
 		*len += spaces;
 		return ;
-		
 	}
 	while (*str != '\0')
-		write (1, str++, 1);
+		write(1, str++, 1);
 	*len += wlen;
 	return ;
 }

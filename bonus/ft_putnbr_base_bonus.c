@@ -16,10 +16,11 @@ static int	len_base_nbr(size_t nbr, int base_len, t_element *info);
 static char	*putnbr_base(size_t nb, int len, char *base, t_element *info);
 static void	find_prefix(char *str, int *min, t_element *info);
 
-void	ft_putnbr_baseb(unsigned long nbr, int *len, char *base, t_element *info)
+void	ft_putnbr_baseb(unsigned long nbr, int *len, char *base,
+		t_element *info)
 {
-	int	base_len;
-	int	lenght;
+	int		base_len;
+	int		lenght;
 	char	*str;
 
 	base_len = ft_strlenb(base);
@@ -34,8 +35,8 @@ void	ft_putnbr_baseb(unsigned long nbr, int *len, char *base, t_element *info)
 static char	*putnbr_base(size_t nb, int len, char *base, t_element *info)
 {
 	char	*str;
-	int	min_len;
-	int	base_len;
+	int		min_len;
+	int		base_len;
 
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
@@ -82,8 +83,8 @@ static int	len_base_nbr(size_t nbr, int base_len, t_element *info)
 	}
 	if (info->precision >= len)
 		return (info->precision + pre_len);
-	if (info->precision == -1 && !(info->flags & MINUS) && (info->flags &
-				ZERO) && info->width > len + pre_len)
+	if (info->precision == -1 && !(info->flags & MINUS) && (info->flags & ZERO)
+		&& info->width > len + pre_len)
 		return (info->width);
 	return (len + pre_len);
 }

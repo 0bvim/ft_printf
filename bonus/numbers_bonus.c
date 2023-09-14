@@ -17,7 +17,7 @@ static int	len_number(int nbr, t_element *info);
 
 void	ft_putnbrb(int nbr, int *len, t_element *info)
 {
-	int	len_s;
+	int		len_s;
 	char	*str;
 
 	len_s = len_number(nbr, info);
@@ -32,6 +32,7 @@ void	ft_putnbrb(int nbr, int *len, t_element *info)
 static void	putnbr(long nbr, int len, char *str, t_element *info)
 {
 	int	min_len;
+
 	min_len = (nbr < 0 || info->flags & (PLUS | SPACE));
 	if (nbr < 0)
 	{
@@ -70,7 +71,8 @@ static int	len_number(int nbr, t_element *info)
 	}
 	if (info->precision >= len)
 		return (info->precision + (neg || info->flags & (SPACE & PLUS)));
-	if (info->precision == -1 && !(info->flags & MINUS) && (info->flags & ZERO) && info->width > len)
+	if (info->precision == -1 && !(info->flags & MINUS) && (info->flags & ZERO)
+		&& info->width > len)
 		return (info->width);
 	return (len);
 }

@@ -20,8 +20,8 @@ int	ft_putchar(char c)
 int	ft_putstr(char *str)
 {
 	if (str == NULL)
-		return (write (STDOUT_FILENO, NULL_STR, ft_strlen(NULL_STR)));
-	return (write (STDOUT_FILENO, str, ft_strlen(str)));
+		return (write(STDOUT_FILENO, NULL_STR, ft_strlen(NULL_STR)));
+	return (write(STDOUT_FILENO, str, ft_strlen(str)));
 }
 
 void	ft_putnbr_base(long nbr, int *len, char *base, int nbase)

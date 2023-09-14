@@ -16,8 +16,8 @@ static int	ft_putstr_spc(char *str, int len, int spaces, t_element *info);
 
 int	ft_putstrb(char *str, t_element *info)
 {
-	int	len;
-	int	spaces;
+	int		len;
+	int		spaces;
 	char	*doppel;
 
 	doppel = str;
