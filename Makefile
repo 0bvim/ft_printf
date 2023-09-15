@@ -6,7 +6,7 @@
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/09/13 21:44:23 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/09/15 13:01:10 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BOBJ)
+bonus: fclean $(BOBJ)
 	@$(AR) $(NAME) $(BOBJ)
 
 clean:
