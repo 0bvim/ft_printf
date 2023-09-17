@@ -6,7 +6,7 @@
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/09/15 13:01:10 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/09/17 00:33:01 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,30 +25,58 @@ OBJS		=	$(SRCS:.c=.o)
 BOBJ		=	$(BSRCS:.c=.o)
 AR		=	ar -rcs
 
+SLEEP = sleep 1
+PRINTD = printf "Done\n"
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
+	@printf "Lib Generated\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf "Making Objects...\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 bonus: fclean $(BOBJ)
 	@$(AR) $(NAME) $(BOBJ)
+	@printf "Making Bonus Objects...\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 clean:
 	@$(RM) $(OBJS)
+	@printf "Cleaning...\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 fclean: clean
 	@$(RM) $(NAME)
+	@$(SLEEP) 
+	@$(PRINTD)
 
 cleanbonus: 
 	@$(RM) $(BOBJ)
+	@$(SLEEP) 
+	@$(PRINTD)
 
 fcleanbonus: cleanbonus fclean
+	@printf "Cleaning...\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 rebonus: fcleanbonus bonus 
+	@printf "Remaking all\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 re: fclean all
+	@printf "Remaking all\n"
+	@$(SLEEP) 
+	@$(PRINTD)
 
 .PHONY: all clean fclean re cleanb fcleanb rebonus
