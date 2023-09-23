@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:15:07 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/14 12:22:39 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:34:07 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf_bonus.h"
 
 static void	get_0x25(const char *fmt, int *len, va_list ap);
-static void	verify_flags(int *len, va_list ap, t_element *info);
+static void	verify_flags(int *len, va_list ap, t_element *info,
+				const char **fmt);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -22,7 +23,7 @@ int	ft_printf(const char *fmt, ...)
 
 	len = 0;
 	if (!fmt)
-		return (-42);
+		return (0);
 	va_start(ap, fmt);
 	get_0x25(fmt, &len, ap);
 	va_end(ap);
@@ -33,8 +34,6 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 {
 	t_element	*info;
 
-	if (!fmt)
-		return ;
 	info = malloc(sizeof(t_element));
 	while (*fmt != '\0')
 	{
@@ -43,24 +42,40 @@ static void	get_0x25(const char *fmt, int *len, va_list ap)
 			fmt++;
 			info->flags = 0;
 			info->width = 0;
-			info->precision = 0;
-			info->type = *fmt;
-			verify_flags(len, ap, info);
-			fmt++;
+			info->precision = -1;
+			verify_flags(len, ap, info, &fmt);
 		}
-		else
-		{
-			*len += write(STDOUT_FILENO, fmt, sizeof(char));
-			fmt++;
-		}
+		else if (fmt)
+			*len += write(STDOUT_FILENO, fmt++, sizeof(char));
 	}
 	free(info);
 }
 
-static void	verify_flags(int *len, va_list ap, t_element *info)
+static void	verify_flags(int *len, va_list ap, t_element *info,
+		const char **fmt)
 {
-	if (ft_istype(info->type))
+	while (!ft_istypeb(**fmt))
 	{
-		print_var(info, ap, len);
+		if (ft_isflagb(**fmt))
+			info->flags |= ft_get_flags(*(*fmt)++);
+		else if (is_digitb(**fmt))
+			info->width = ft_atoi(fmt);
+		else if (**fmt == '*')
+		{
+			(*fmt)++;
+			info->width = va_arg(ap, int);
+		}
+		else if (*(*fmt)++ == '.')
+		{
+			if (**fmt == '*')
+			{
+				(*fmt)++;
+				info->precision = va_arg(ap, int);
+			}
+			else
+				info->precision = ft_atoi(fmt);
+		}
 	}
+	info->type = *(*fmt)++;
+	print_varb(info, ap, len);
 }

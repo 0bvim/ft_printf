@@ -6,7 +6,7 @@
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/09/17 00:33:01 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/09/23 11:38:44 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME		=	libftprintf.a
 LIBS		=	-lft
 INCLUDES	=	-I ./includes
 CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES)
-FILES		=	ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c
+FILES		=	ft_printf.c ft_put.c ft_print_var.c \
+			ft_flags_utils.c ft_putnbr_base.c ft_atoi.c \
+			ft_numbers.c ft_putchar.c ft_putstr.c
 FILESB		=	ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c \
 			ft_flags_utils_bonus.c ft_putnbr_base_bonus.c ft_atoi_bonus.c \
 			ft_numbers_bonus.c ft_putchar_bonus.c ft_putstr_bonus.c
@@ -28,25 +30,25 @@ AR		=	ar -rcs
 SLEEP = sleep 1
 PRINTD = printf "Done\n"
 
+ifdef WITH_BONUS
+	OBJS += $(BOBJ)
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
 	@printf "Lib Generated\n"
 	@$(SLEEP) 
 	@$(PRINTD)
 
 %.o:%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(AR) $(NAME) $@
 	@printf "Making Objects...\n"
 	@$(SLEEP) 
-	@$(PRINTD)
 
-bonus: fclean $(BOBJ)
-	@$(AR) $(NAME) $(BOBJ)
-	@printf "Making Bonus Objects...\n"
-	@$(SLEEP) 
-	@$(PRINTD)
+bonus:
+	@$(MAKE) WITH_BONUS=TRUE --no-print-directory
 
 clean:
 	@$(RM) $(OBJS)
@@ -79,4 +81,4 @@ re: fclean all
 	@$(SLEEP) 
 	@$(PRINTD)
 
-.PHONY: all clean fclean re cleanb fcleanb rebonus
+.PHONY: all bonus clean fclean re cleanbonus fcleanbonus rebonus

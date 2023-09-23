@@ -6,7 +6,7 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 05:07:17 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 19:26:43 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/23 11:24:43 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 /* defines */
 # define HEX_LW "0123456789abcdef"
 # define HEX_UP "0123456789ABCDEF"
-# define OCT_BASE "01234567"
 # define DEC_BASE "0123456789"
 # define NULL_PTR "(nil)"
 # define NULL_STR "(null)"
