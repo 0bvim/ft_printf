@@ -6,11 +6,11 @@
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 07:52:32 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 08:18:41 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/24 06:04:44 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf_bonus.h"
+#include "includes/ft_printf_bonus.h"
 
 int	ft_istypeb(char c)
 {

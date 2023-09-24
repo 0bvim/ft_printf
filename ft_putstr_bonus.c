@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr_bonus.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:53:55 by vde-frei          #+#    #+#             */
-/*   Updated: 2023/09/13 19:05:34 by vde-frei         ###   ########.fr       */
+/*   Updated: 2023/09/24 06:06:32 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf_bonus.h"
+#include "includes/ft_printf_bonus.h"
 
 static int	ft_putstr_spc(char *str, int len, int spaces, t_element *info);
 
