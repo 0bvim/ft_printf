@@ -6,15 +6,14 @@
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/09/24 06:15:01 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/10/12 05:20:14 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### COMMOM ###
 NAME		=	libftprintf.a
-LIBS		=	-lft
 INCLUDES	=	-I ./includes
-CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES) $(LIBS)
+CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES)
 FILES		=	ft_printf.c ft_put.c ft_print_var.c \
 			ft_flags_utils.c ft_putnbr_base.c ft_atoi.c \
 			ft_numbers.c ft_putchar.c ft_putstr.c
