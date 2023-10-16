@@ -19,7 +19,8 @@ $ git clone https://github.com/vinicius-f-pereira/ft_printf.git
 ### Now you need to build libftprintf.a
 ```bash
 $ cd ft_printf
-$ make```
+$ make
+```
 `or`
 ```bash
 make bonus
