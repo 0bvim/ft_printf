@@ -1,23 +1,30 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile_commented                                 :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: vde-frei <vde-frei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 17:36:04 by vde-frei          #+#    #+#              #
-#    Updated: 2023/10/16 16:42:24 by vde-frei         ###   ########.fr        #
+#    Updated: 2023/10/16 16:54:12 by vde-frei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+### CONFIGURATION AND SETUP FILES ###
+
+# NAME OF FILE TO BE GENERATED IF NOT GENERATE YET #
 NAME = libftprintf.a
 
-LIBFT = lib/libft/libft.a
-
+# SETTING SHELL TO USE FOR COUNT AND PRINT PERCENTAGE #
 SHELL := /bin/bash
+
+# COUNT TO MAKE SHELL SCRIPT TO COUNT PERCENTAGE #
 COUNT := 0
+
+# SLEEP IS TO WAIT A LITTLE OF TIME BEFORE PRINT NEXT STEP #
 SLEEP := sleep 0.5
 
+# COLORS #
 BLACK  		 = \033[0;30m
 RED    		 = \033[0;31m
 GREEN  		 = \033[0;32m
@@ -28,6 +35,7 @@ CYAN   		 = \033[0;36m
 WHITE  		 = \033[0;37m
 RESET  		 = \033[0m
 
+# MESSAGES #
 MANDATORY = Static library compiled
 LBONUS = Bonus Static library compiled
 CLEAN = Objects delete
@@ -36,26 +44,33 @@ LIBNAME = ft_printf
 BLIBNAME = ft_printf_bonus
 COMP = Compiling
 
+# FLAGS #
 DFLAGS = -Wall -Wextra -Werror -g3 # TO DEBBUG
 CFLAGS = -Wall -Werror -Wextra -O3 -fomit-frame-pointer -finline-functions # TO IMPROVE PERFORMANCE
+# AR FLAGS IS JUST TO STATIC LIBRARY, AND DON'T NEED OF '-' #
 ARFLAGS = rcs
 
+# PATHS OF DIRECTORIES #
 SRC = sources
 BONUS = sources/bonus
 INC = includes
 OBJ = obj
 
+# INCLUDES, HERE YOU CAN PUT ALL PATHS #
 INCLUDES = -I$(INC)/
 
+# '.C' FILES AND RESPECTIVE DIRECTIORY #
 CFILES = $(addprefix $(SRC)/, ft_printf.c ft_put.c ft_print_var.c ft_flags_utils.c ft_putnbr_base.c \
 		 ft_atoi.c ft_numbers.c ft_putchar.c ft_putstr.c)
 
+# BONUS FILES #
 BFILES = $(addprefix $(BONUS)/, ft_printf_bonus.c ft_put_bonus.c ft_print_var_bonus.c \
 		 ft_flags_utils_bonus.c ft_putnbr_base_bonus.c ft_atoi_bonus.c \
 		 ft_numbers_bonus.c ft_putchar_bonus.c ft_putstr_bonus.c)
 
 OBJECT =  $(patsubst %, $(OBJ)/%, $(notdir $(CFILES:.c=.o)))
 
+# CHANGE PATHS AND FILE TO MAKE BONUS #
 ifdef WITH_BONUS
 	CFILES = $(BFILES)
 	MANDATORY = $(LBONUS)
@@ -63,10 +78,12 @@ ifdef WITH_BONUS
 	LIBNAME = $(BLIBNAME)
 endif
 
+# CHANGE FLAGS FOR DEBUGG #
 ifdef WITH_DEBBUG
 	CFLAGS = $(DFLAGS)
 endif
 
+# RECIPE #
 all: $(OBJ) $(NAME)
 
 $(NAME): $(OBJECT)
@@ -100,4 +117,5 @@ bonus:
 debbug:
 	@make WITH_DEBBUG=TRUE --no-print-directory
 
+# FLAGS TO AVOID CONFLICTS #
 .PHONY: all bonus clean fclean re debbug
