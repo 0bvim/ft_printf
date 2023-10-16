@@ -4,22 +4,23 @@
 ### The goal of this project is recode printf(). Here I learn mainly about using a variadic arguments.
 
 ## HOW USE IT?
+> Following command are in terminal. (`$`) \
 > First, clone repository with your the way you prefer
 ```bash
-$ gh repo clone vinicius-f-pereira/ft_printf
+gh repo clone vinicius-f-pereira/ft_printf
 ```
 `or`
 ```
-$ git clone git@github.com:vinicius-f-pereira/ft_printf.git
+git clone git@github.com:vinicius-f-pereira/ft_printf.git
 ```
 `or`
 ```
-$ git clone https://github.com/vinicius-f-pereira/ft_printf.git
+git clone https://github.com/vinicius-f-pereira/ft_printf.git
 ```
 ### Now you need to build libftprintf.a
 ```bash
-$ cd ft_printf
-$ make
+cd ft_printf
+make
 ```
 `or`
 ```bash
@@ -29,8 +30,8 @@ make bonus
 ### You need of a `main.c` file with path do header and compile it with static library
 > The recipe to compile executable
 ```bash
-$ cc main.c libftprintf.a -Iincludes -o ft_printf
-$ ./ft_printf
+cc main.c libftprintf.a -Iincludes -o ft_printf
+./ft_printf
 ```
 
 > Here's a boilerplate of a `main.c`
